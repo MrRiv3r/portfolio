@@ -3,14 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded YouTube Video</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Positioning for the dropdown menu */
+        select {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        /* Style for the container */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Style for the video container */
+        #video-container {
+            position: relative;
+            width: 50vw; /* Set the desired width */
+            height: 50vw; /* Set the desired height */
+        }
+
+        /* Style for the iframe */
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Style for the arrow buttons */
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            outline: none;
+        }
+        
+        /* Positioning for previous button */
+        .prev-btn {
+            left: 10px;
+        }
+
+        /* Positioning for next button */
+        .next-btn {
+            right: 10px;
+        }
+    </style>
 </head>
 <body>
 
-    <h2>Embedded YouTube Video Example</h2>
+    <!-- Dropdown menu -->
+    <select onchange="window.location.href=this.value">
+        <option value="" disabled selected>Menu</option>
+        <option value="illustrations.html">art</option>
+        <option value="animations.html">videos</option>
+        <option value="projects.html">Projects</option>
+        <option value="logos.html">Logos</option>
+        <option value="about.html">About</option>
+    </select>
 
-    <!-- Replace VIDEO_ID with the actual ID of the YouTube video -->
-    <iframe width="560" height="315" src="https://www.youtube.com/shorts/mB5t-P6t9QA" frameborder="0" allowfullscreen></iframe>
+    <!-- Container for the video -->
+    <div id="video-container">
+        <!-- The iframe will be added here -->
+    </div>
+
+    <!-- Arrow buttons for previous and next videos -->
+    <button class="arrow-btn prev-btn" onclick="prevVideo()">&#10094;</button>
+    <button class="arrow-btn next-btn" onclick="nextVideo()">&#10095;</button>
+
+    <script>
+        // Array of video IDs
+        var videoIDs = [
+            "mB5t-P6t9QA",  // Video 1
+            "ul40dQ-0kjo",   // Video 2
+            "Y7ITrnkGpNs"    // Video 3
+            // Add more video IDs as needed
+        ];
+
+        var currentIndex = 0;
+
+        // Function to load the current video
+        function loadVideo() {
+            var videoContainer = document.getElementById("video-container");
+            var videoID = videoIDs[currentIndex];
+            var iframe = document.createElement("iframe");
+            iframe.src = "https://www.youtube.com/embed/" + videoID;
+            iframe.frameborder = "0";
+            iframe.allowfullscreen = true;
+            videoContainer.innerHTML = "";
+            videoContainer.appendChild(iframe);
+        }
+
+        // Function to go to the previous video
+        function prevVideo() {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = videoIDs.length - 1;
+            }
+            loadVideo();
+        }
+
+        // Function to go to the next video
+        function nextVideo() {
+            if (currentIndex < videoIDs.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            loadVideo();
+        }
+
+        // Load the initial video
+        loadVideo();
+    </script>
 
 </body>
 </html>
