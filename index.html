@@ -5,9 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<title>Slideshow</title>
+<style>
+    /* Style for slideshow container */
+    .slideshow-container {
+        max-width: 500px;
+        position: relative;
+        margin: auto;
+    }
+
+    /* Style for images */
+    .slideshow-image {
+        display: none;
+        width: 100%;
+    }
+
+    /* Style for next and previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Positioning of previous button */
+    .prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* Positioning of next button */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* Hover effect for buttons */
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+</style>
+</head>
 <body>
-    <p>
-        test
-    </p>
+
+<div class="slideshow-container">
+    <!-- Slides -->
+    <img class="slideshow-image" src="images/PXL_20240210_154231167.jpg" alt="Slide 1">
+    <img class="slideshow-image" src="images/PXL_20240210_154438749.MP.jpg" alt="Slide 2">
+    <img class="slideshow-image" src="images/PXL_20240210_154556372.jpg" alt="Slide 3">
+
+    <!-- Previous and Next buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+    // JavaScript for slideshow functionality
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slideshow-image");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>
+   
 </body>
 </html>
