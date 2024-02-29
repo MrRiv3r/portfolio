@@ -6,18 +6,75 @@
     <title>Illustrations</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<title>Slideshow</title>
+<body>
+    <h1>Illustrations and 3-D Models</h1>
+    <select onchange="window.location.href=this.value">
+        <option value="" disabled selected>menu</option>
+        <option value="illustrations.html">art</option>
+        <option value="animations.html">videos</option>
+        <option value="projects.html">Projects</option>
+        <option value="logos.html">Logos</option>
+        <option value="about.html">Contact</option>
+        <option value="index.html">Home</option>
+    </select>
+
+<div class="container">
+    <div class="slideshow-container">
+        <!-- Slides -->
+        <img class="slideshow-image" src="images/PXL_20240210_154231167.jpg" alt="Slide 1">
+        <img class="slideshow-image" src="images/PXL_20240210_154438749.MP.jpg" alt="Slide 2">
+        <img class="slideshow-image" src="images/PXL_20240210_154556372.jpg" alt="Slide 3">
+        <img class="slideshow-image" src="images/PXL_20240210_154836139.MP.jpg" alt="Slide 4">
+        <img class="slideshow-image" src="images/PXL_20240210_154836139.MP.jpg" alt="Slide 5">
+        <img class="slideshow-image" src="images/portrait.png" alt="Slide 6">
+        <img class="slideshow-image" src="images/sexy.png" alt="Slide 7">
+
+        <!-- Previous and Next buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+</div>
+
+<script>
+    // JavaScript for slideshow functionality
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slideshow-image");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>
+
 <style>
     /* Style for slideshow container */
-    
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .slideshow-container {
+        max-width: 100%;
+    }
 
     /* Style for images */
     .slideshow-image {
         display: none;
-        width: 100%;
+        max-width: 35vw;
+        min-width: 35vw;
         height: auto;
-        min-width: 30vw; /* Adjust the maximum width as needed */
-        max-width: 30vw; /* Adjust the maximum width as needed */
     }
 
     /* Style for next and previous buttons */
@@ -52,56 +109,29 @@
     .prev:hover, .next:hover {
         background-color: rgba(0, 0, 0, 0.8);
     }
-</style>
-</head>
-<body>
-    <h1>Illustrations and 3-D Models</h1>
-    <select onchange="window.location.href=this.value">
-        <option value="" disabled selected>menu</option>
-        <option value="illustrations.html">art</option>
-        <option value="animations.html">videos</option>
-        <option value="projects.html">Projects</option>
-        <option value="logos.html">Logos</option>
-        <option value="about.html">Contact</option>
-        <option value="index.html">Home</option>
-    </select>
 
-<div class="slideshow-container">
-    <!-- Slides -->
-    <img class="slideshow-image" src="images/PXL_20240210_154231167.jpg" alt="Slide 1">
-    <img class="slideshow-image" src="images/PXL_20240210_154438749.MP.jpg" alt="Slide 2">
-    <img class="slideshow-image" src="images/PXL_20240210_154556372.jpg" alt="Slide 3">
-    <img class="slideshow-image" src="images/PXL_20240210_154836139.MP.jpg" alt="Slide 4">
-    <img class="slideshow-image" src="images/PXL_20240210_154836139.MP.jpg" alt="Slide 5">
-    <img class="slideshow-image" src="images/portrait.png" alt="Slide 6">
-    <img class="slideshow-image" src="images/sexy.png" alt="Slide 7">
-
-    <!-- Previous and Next buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-
-
-<script>
-    // JavaScript for slideshow functionality
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("slideshow-image");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+    /* Media query for adjusting image size based on screen width */
+    @media only screen and (max-width: 600px) {
+        .slideshow-image {
+            width: 100%;
+            height: auto;
         }
-        slides[slideIndex-1].style.display = "block";
     }
-</script>
-   
+
+    @media only screen and (min-width: 601px) and (max-width: 1024px) {
+        .slideshow-image {
+            width: 70%;
+            height: auto;
+        }
+    }
+
+    @media only screen and (min-width: 1025px) {
+        .slideshow-image {
+            width: 50%;
+            height: auto;
+        }
+    }
+</style>
+
 </body>
 </html>
