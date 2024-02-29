@@ -49,5 +49,9 @@ h1{
     max-width: auto; /* Let the width adjust automatically */
     display: inline-block; /* Display images inline */
 }
-
+.wrapper {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
 
