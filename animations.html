@@ -66,6 +66,13 @@
         .next-btn {
             right: -60px; /* Move right by 60px to center it between the videos */
         }
+
+        /* Style for the YouTube channel link */
+        .youtube-link {
+            margin-top: auto; /* Push to the bottom */
+            margin-bottom: 20px; /* Add some space */
+            text-align: center; /* Center the link */
+        }
     </style>
 </head>
 <body>
@@ -80,11 +87,11 @@
         <option value="about.html">About</option>
         <option value="index.html">Home</option>
     </select>
-    <h1> Videos, Animations, and Turn Tables </h1>
+    <h1> Motion Graphics, Animations, and Turn Tables </h1>
 
     <!-- Container for the first video -->
     <div class="video-container-wrapper">
-        <h2>Video 1</h2>
+        <h2>Animations</h2>
         <div class="video-container">
             <!-- The iframe will be added here -->
         </div>
@@ -95,7 +102,7 @@
 
     <!-- Container for the second video -->
     <div class="video-container-wrapper">
-        <h2>Video 2</h2>
+        <h2>Motion Graphics</h2>
         <div class="video-container">
             <!-- The iframe will be added here -->
         </div>
@@ -106,13 +113,18 @@
 
     <!-- Container for the third video -->
     <div class="video-container-wrapper">
-        <h2>Video 3</h2>
+        <h2>Turn Tables</h2>
         <div class="video-container">
             <!-- The iframe will be added here -->
         </div>
         <!-- Arrow buttons for previous and next videos -->
         <button class="arrow-btn prev-btn" onclick="prevVideo(2)">&#10094;</button>
         <button class="arrow-btn next-btn" onclick="nextVideo(2)">&#10095;</button>
+    </div>
+
+    <!-- YouTube channel link -->
+    <div class="youtube-link">
+        <a href="https://www.youtube.com/channel/UCRmmzzXZl8qYWxmJ0FLekxA" target="_blank">Check out the YouTube channel!</a>
     </div>
 
     <script>
