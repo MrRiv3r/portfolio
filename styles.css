@@ -32,22 +32,20 @@ h1{
     width: 75vw;
     height: 10%;
     background: rgb(199, 149, 11);
-    position: absolute;
-    top:10%;
-    left: 5%;
+
   }
   #book-suggester {
     width: 75vw;
     height: 10%;
     background: rgb(199, 149, 11);
-    position: absolute;
-    top:25%;
-    left: 5%;
+   
+  
   }
   /* styles.css */
 
 /* Style for the image */
 .project-image-size {
-    max-width: 50%; /* Set width to 10% */
-    max-height: 100%; /* Let the height adjust automatically */
+    max-height: 10vw; /* Set the height to 20% of the container height */
+    max-width: auto; /* Let the width adjust automatically */
+    display: inline-block; /* Display images inline */
 }
