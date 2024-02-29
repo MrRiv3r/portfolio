@@ -13,6 +13,15 @@
             left: 10px;
         }
 
+        /* Style for the header background */
+        .header-background {
+            width: 150%;
+            background-color: #333; /* Change the background color as needed */
+            color: white; /* Change the text color as needed */
+            padding: 10px; /* Add some padding for better visibility */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
         /* Style for the container */
         body, html {
             height: 100%;
@@ -78,16 +87,20 @@
 <body>
 
     <!-- Dropdown menu -->
-    <select onchange="window.location.href=this.value">
-        <option value="" disabled selected>Menu</option>
-        <option value="illustrations.html">art</option>
-        <option value="animations.html">videos</option>
-        <option value="projects.html">Projects</option>
-        <option value="logos.html">Logos</option>
-        <option value="about.html">About</option>
-        <option value="index.html">Home</option>
-    </select>
-    <h1> Motion Graphics, Animations, and Turn Tables </h1>
+    <div class="header-background">
+        <select onchange="window.location.href=this.value">
+            <option value="" disabled selected>menu</option>
+            <option value="illustrations.html">art</option>
+            <option value="animations.html">videos</option>
+            <option value="projects.html">Projects</option>
+            <option value="logos.html">Logos</option>
+            <option value="models.html">Models</option>
+            <option value="about.html">Contact</option>
+            <option value="index.html">Home</option>
+        </select>
+        <h1> Motion Graphics, Animations, and Turn Tables </h1>
+    </div>
+  
 
     <!-- Container for the first video -->
     <div class="video-container-wrapper">
