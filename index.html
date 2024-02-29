@@ -12,21 +12,23 @@
             display: flex; /* Use flexbox */
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
-            height: 80vw; /* Fixed height */
+            height: 45vw; /* Fixed height */
             overflow: hidden; /* Hide any overflowing content */
             position: relative; /* Relative positioning for absolute children */
         }
 
         /* Style for the slideshow container */
         .slideshow-container-1 {
-            max-width: 50vw;
+            max-width: 30vw;
             position: relative;
             margin: auto;
         }
 
         /* Style for the images */
         .mySlides img {
-            width: 100%; /* Make all images fill their container */
+            max-width: 30vw;
+            min-width: 30vw;
+            max-height: 40vw; /* Make all images fill their container */
             height: auto; /* Maintain aspect ratio */
         }
 
@@ -50,10 +52,6 @@
         /* Style for the text */
         .slide-text {
             text-align: center;
-            position: absolute;
-            bottom: 10vw;
-            left: 50%;
-            transform: translateX(-50%);
             color: white;
             font-size: 3vw;
         }
@@ -95,6 +93,7 @@
             </div>
         </div>
     </div>
+
     <!-- Slide text -->
     <p class="slide-text">Hi, I'm River</p>
 
