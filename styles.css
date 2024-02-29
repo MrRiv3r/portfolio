@@ -49,5 +49,5 @@ h1{
 /* Style for the image */
 .project-image-size {
     max-width: 50%; /* Set width to 10% */
-    height: 100%; /* Let the height adjust automatically */
+    max-height: 100%; /* Let the height adjust automatically */
 }
