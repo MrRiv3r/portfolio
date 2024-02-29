@@ -20,8 +20,38 @@
     <a href="animations.html">Animations</a>
     <a href="projects.html">Projects</a>
   
-  
-</body>
-   
+    <div id="stretching-vr">
+        <h2><a href="https://store.steampowered.com/app/782420/RHCs_StretchingVr/">RHCs Stretching VR</a></h2>
+        <p>I created this game for my Capstone project at Sheridan. It is a VR exercise game, based around mini games</p>
+        <!-- Add onclick event to open popup window -->
+        <img class="project-image-size" src="images/PXL_20240210_154231167.jpg" onclick="openPopup(this.src)">
+        <img class="project-image-size" src="images/sexy.png" onclick="openPopup(this.src)">
+    </div>
+    <div id="book-suggester">
+        <h2><a href="https://store.steampowered.com/app/782420/RHCs_StretchingVr/">RHCs Stretching VR</a></h2>
+        <p>I created this game for my Capstone project at Sheridan. It is a VR exercise game, based around mini games</p>
+        <!-- Add onclick event to open popup window -->
+        <img class="project-image-size" src="images/PXL_20240210_154231167.jpg" onclick="openPopup(this.src)">
+        <img class="project-image-size" src="images/sexy.png" onclick="openPopup(this.src)">
+    </div>
+
+    <script>
+        // Function to open popup window
+        function openPopup(imageSrc) {
+            // Calculate popup size (80% of screen width and height)
+            var popupWidth = window.innerWidth * 0.8;
+            var popupHeight = window.innerHeight * 0.8;
+            
+            // Calculate left and top position to center the popup window
+            var left = (window.innerWidth - popupWidth) / 2;
+            var top = (window.innerHeight - popupHeight) / 2;
+            
+            // Open popup window with calculated size and position
+            var popupWindow = window.open("", "_blank", "width=" + popupWidth + ", height=" + popupHeight + ", left=" + left + ", top=" + top);
+            
+            // Write image HTML to the popup window
+            popupWindow.document.write("<img src='" + imageSrc + "' style='width: 100%; height: 100%; object-fit: contain;'>");
+        }
+    </script>
 </body>
 </html>
