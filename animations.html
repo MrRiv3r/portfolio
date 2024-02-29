@@ -21,11 +21,14 @@
             flex-direction: column; /* Stack elements vertically */
             align-items: center;
         }
-        
+
         /* Style for the video container */
-        .video-container {
+        .video-container-wrapper {
             margin-bottom: 20px; /* Add some space between video containers */
             position: relative;
+        }
+
+        .video-container {
             width: 80vw; /* Set the desired width */
             height: 45vw; /* Set the height to maintain the aspect ratio (assuming 16:9 aspect ratio) */
             max-height: 80vh; /* Limit the height to 80% of the viewport height */
@@ -34,9 +37,6 @@
 
         /* Style for the iframe */
         iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
         }
@@ -56,15 +56,15 @@
             font-size: 20px;
             outline: none;
         }
-        
+
         /* Positioning for previous button */
         .prev-btn {
-            left: 10px;
+            left: -60px; /* Move left by 60px to center it between the videos */
         }
 
         /* Positioning for next button */
         .next-btn {
-            right: 10px;
+            right: -60px; /* Move right by 60px to center it between the videos */
         }
     </style>
 </head>
@@ -80,36 +80,40 @@
         <option value="about.html">About</option>
         <option value="index.html">Home</option>
     </select>
-<h1> Videos, Animations, and Turn Tables </h1>
-    <!-- First Video -->
-    <h2>Video 1</h2>
-    <div class="video-container">
-        <!-- The iframe will be added here -->
+    <h1> Videos, Animations, and Turn Tables </h1>
+
+    <!-- Container for the first video -->
+    <div class="video-container-wrapper">
+        <h2>Video 1</h2>
+        <div class="video-container">
+            <!-- The iframe will be added here -->
+        </div>
+        <!-- Arrow buttons for previous and next videos -->
+        <button class="arrow-btn prev-btn" onclick="prevVideo(0)">&#10094;</button>
+        <button class="arrow-btn next-btn" onclick="nextVideo(0)">&#10095;</button>
     </div>
 
-    <!-- Second Video -->
-    <h2>Video 2</h2>
-    <div class="video-container">
-        <!-- The iframe will be added here -->
+    <!-- Container for the second video -->
+    <div class="video-container-wrapper">
+        <h2>Video 2</h2>
+        <div class="video-container">
+            <!-- The iframe will be added here -->
+        </div>
+        <!-- Arrow buttons for previous and next videos -->
+        <button class="arrow-btn prev-btn" onclick="prevVideo(1)">&#10094;</button>
+        <button class="arrow-btn next-btn" onclick="nextVideo(1)">&#10095;</button>
     </div>
 
-    <!-- Third Video -->
-    <h2>Video 3</h2>
-    <div class="video-container">
-        <!-- The iframe will be added here -->
+    <!-- Container for the third video -->
+    <div class="video-container-wrapper">
+        <h2>Video 3</h2>
+        <div class="video-container">
+            <!-- The iframe will be added here -->
+        </div>
+        <!-- Arrow buttons for previous and next videos -->
+        <button class="arrow-btn prev-btn" onclick="prevVideo(2)">&#10094;</button>
+        <button class="arrow-btn next-btn" onclick="nextVideo(2)">&#10095;</button>
     </div>
-
-    <!-- Arrow buttons for previous and next videos -->
-    <button class="arrow-btn prev-btn" onclick="prevVideo(0)">&#10094;</button>
-    <button class="arrow-btn next-btn" onclick="nextVideo(0)">&#10095;</button>
-
-    <!-- Arrow buttons for previous and next videos -->
-    <button class="arrow-btn prev-btn" onclick="prevVideo(1)">&#10094;</button>
-    <button class="arrow-btn next-btn" onclick="nextVideo(1)">&#10095;</button>
-
-    <!-- Arrow buttons for previous and next videos -->
-    <button class="arrow-btn prev-btn" onclick="prevVideo(2)">&#10094;</button>
-    <button class="arrow-btn next-btn" onclick="nextVideo(2)">&#10095;</button>
 
     <script>
         // Arrays of video IDs for each container
