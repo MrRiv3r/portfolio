@@ -22,6 +22,11 @@ h1 {
     color:white;
     font-size: 2vw; /* Set the desired font size */
 }
+h2{
+    font-size: 1vw; /* Set the desired font size */
+    text-align: center;
+    color:white;
+}
 
 /* Your existing styles for other elements */
 .slideshow-container {
@@ -36,19 +41,31 @@ h1 {
     justify-content: center;
     align-items: center;
 }
-
+#contact-info {
+    width: 100vw;
+    height: 5%;
+    background: rgb(60, 60, 60);
+}
 #stretching-vr {
-    width: 75vw;
+    width: 100vw;
     height: 10%;
-    background: rgb(199, 149, 11);
+    background: rgb(60, 60,60);
 }
 
 #book-suggester {
-    width: 75vw;
+    width: 100vw;
     height: 10%;
-    background: rgb(199, 149, 11);
+    background: rgb(60, 60, 60);
 }
-
+p{
+    padding-left: 1vw;
+    color: white;
+    font-size: 1vw;
+}
+a{
+    color: white;
+    font-size: 1.5vw;
+}
 /* Other styles... */
 
   /* styles.css */
