@@ -79,26 +79,6 @@
     span.onclick = function() { 
         modal.style.display = "none";
     }
-
-    // JavaScript for adjusting image size based on viewport width
-    window.onload = function() {
-        adjustImageSize();
-    };
-
-    window.onresize = function() {
-        adjustImageSize();
-    };
-
-    function adjustImageSize() {
-        var viewportWidth = window.innerWidth;
-        var slideshowImages = document.querySelectorAll('.slideshow-image');
-        var imageWidth = 0.8 * viewportWidth; // Adjust as needed
-
-        for (var i = 0; i < slideshowImages.length; i++) {
-            slideshowImages[i].style.width = imageWidth + 'px';
-            slideshowImages[i].style.height = 'auto';
-        }
-    }
 </script>
 
 <style>
@@ -112,14 +92,15 @@
 
     .slideshow-container {
         max-width: 100%;
-        position: relative;
     }
 
     /* Style for images */
     .slideshow-image {
         display: none;
-        width: 100%;
+        max-width:35vw;
+        min-width: 35vw;
         height: auto;
+        max-height:45vw;
         cursor: pointer;
     }
 
@@ -129,8 +110,8 @@
         position: absolute;
         top: 50%;
         width: auto;
-        padding: 16px;
-        margin-top: -22px;
+        padding: 1vw;
+        margin-top: -1vw;
         color: white;
         font-weight: bold;
         font-size: 18px;
@@ -182,5 +163,19 @@
         top: 15px;
         right: 35px;
         color: #f1f1f1;
-        font-size: 40
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
     }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+</body>
+</html>
