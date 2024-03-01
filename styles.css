@@ -23,7 +23,7 @@ h1 {
     font-size: 2vw; /* Set the desired font size */
 }
 h2{
-    font-size: 1vw; /* Set the desired font size */
+    font-size: 2vw; /* Set the desired font size */
     text-align: center;
     color:white;
 }
@@ -68,7 +68,7 @@ p{
     padding-left: 1vw;
   
     color: white;
-    font-size: 1vw;
+    font-size: 1.5vw;
 }
 a{
  
