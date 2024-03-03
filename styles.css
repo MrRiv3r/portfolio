@@ -64,6 +64,11 @@ h3 {
     height: 10%;
     background: rgb(60, 60, 60);
 }
+#The-Drain-Collector {
+    width: 100%;
+    height: 10%;
+    background: rgb(60, 60, 60);
+}
 p{
     padding-left: 1vw;
   
@@ -90,4 +95,35 @@ a{
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
 }
+/* Style for project sections */
+.project {
+    margin-top: 20px; /* Add some space between projects */
+    display: flex; /* Add flexbox layout */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Wrap items if they exceed the container width */
+}
 
+/* Style for project headings */
+.project h2 {
+    flex: 0 1 100%; /* Allow the h2 element to grow and shrink, but always have a width of 100% */
+    margin-top: 0; /* Remove top margin */
+}
+
+/* Style for project descriptions */
+.project p {
+    flex: 0 1 100%; /* Allow the p element to grow and shrink, but always have a width of 100% */
+    margin-bottom: 1vw; /* Add bottom margin */
+}
+
+/* Style for project images */
+.project-image-size {
+    max-width: 100px; /* Set the maximum width for the images */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Show pointer cursor on hover */
+    margin: 5px; /* Add some space between images */
+}
+.project-images {
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Wrap items if they exceed the container width */
+}
