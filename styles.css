@@ -126,7 +126,7 @@ a{
     max-width: 100px; /* Set the maximum width for the images */
     height: auto; /* Maintain aspect ratio */
     cursor: pointer; /* Show pointer cursor on hover */
-    margin: 5px; /* Add some space between images */
+    
 }
 .project-images {
     display: flex; /* Use flexbox layout */
