@@ -103,8 +103,8 @@ a{
 /* Style for the image */
 .project-image-size {
     max-height: 10vw; /* Set the height to 20% of the container height */
-    max-width: 15vw; /* Let the width adjust automatically */
-    min-width: 5vw;
+    max-width: 1px; /* Let the width adjust automatically */
+    min-width: 0vw;
     display: inline-block; /* Display images inline */
 }
 .wrapper {
@@ -133,12 +133,8 @@ a{
 }
 
 /* Style for project images */
-.project-image-size {
-    max-width: 100px; /* Set the maximum width for the images */
-    height: auto; /* Maintain aspect ratio */
-    cursor: pointer; /* Show pointer cursor on hover */
-    
-}
+
+
 .project-images {
     display: flex; /* Use flexbox layout */
     justify-content: center; /* Center items horizontally */
