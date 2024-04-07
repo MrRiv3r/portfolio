@@ -87,7 +87,6 @@ h3 {
 }
 p{
     padding-left: 1vw;
-  text-align: center;
     color: white;
     font-size: 1.5vw;
 }
@@ -96,47 +95,44 @@ a{
     color: white;
     font-size: 1.5vw;
 }
-/* Other styles... */
-
-  /* styles.css */
-
-/* Style for the image */
-.project-image-size {
-    max-height: 10vw; /* Set the height to 20% of the container height */
-    max-width: 1px; /* Let the width adjust automatically */
-    min-width: 0vw;
-    display: inline-block; /* Display images inline */
-}
-.wrapper {
-    display: flex; /* Use flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
-/* Style for project sections */
-.project {
-    margin-top: 20px; /* Add some space between projects */
-    display: flex; /* Add flexbox layout */
-    justify-content: center; /* Center items horizontally */
-    flex-wrap: wrap; /* Wrap items if they exceed the container width */
-}
-
 /* Style for project headings */
 .project h2 {
     flex: 0 1 100%; /* Allow the h2 element to grow and shrink, but always have a width of 100% */
     margin-top: 0; /* Remove top margin */
 }
-
-/* Style for project descriptions */
-.project p {
-    flex: 0 1 100%; /* Allow the p element to grow and shrink, but always have a width of 100% */
-    margin-bottom: 1vw; /* Add bottom margin */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.9); /* Black with opacity */
+    padding-top: 50px; /* Space for close button */
 }
 
-/* Style for project images */
-
-
-.project-images {
-    display: flex; /* Use flexbox layout */
-    justify-content: center; /* Center items horizontally */
-    flex-wrap: wrap; /* Wrap items if they exceed the container width */
+.modal img {
+    margin: auto; /* Center image */
+    display: block; /* Adjust to image width */
 }
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+

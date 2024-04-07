@@ -5,8 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS for the grid layout */
+        .project {
+            position: relative; /* Add relative positioning */
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+            grid-template-rows: 1em 1fr;
+            grid-gap: 20px; /* Gap between grid items */
+            margin-bottom: 20px; /* Add margin bottom between projects */
+
+        }
+    
+        .project h2 {
+            grid-row: 1; /* Place title in first row */
+            grid-column: 1; /* Span title across both columns */
+        }
+        .project .h2center {
+            grid-row: 1; /* Place title in first row */
+            grid-column: 1/span2; /* Span title across both columns */
+        }
+    
+        .project .project-description {
+            grid-row: 2; /* Place description in second row */
+            grid-column: 1; /* Span description across both columns */
+            align-self: start; /* Align description to the start of its column */
+            text-align: center;
+
+        }
+        .project .project-description2 {
+            grid-row: 2; /* Place description in second row */
+            grid-column: 1/span2; /* Span description across both columns */
+            align-self: start; /* Align description to the start of its column */
+            text-align: center;
+        }
+    
+        .project .project-images {
+            grid-row: 1/span 2; /* Place images in third row */
+            grid-column: 2; /* Place images in second column */
+        }
+    
+        .project-images img {
+            display: none; /* Hide all images initially */
+            width: 100%; /* Ensure images fill their container */
+            height: 30vw;
+        }
+    
+        .project-images img.active {
+            display: block; /* Show active image */
+        }
+        .prev-arrow,
+.next-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+        
+        .prev-arrow:hover,
+        .next-arrow:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .prev-arrow {
+            left: 50%;
+        }
+        
+        .next-arrow {
+            right: 0;
+        }
+    </style>
 </head>
 <body>
+    <div id="slideshowModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <!-- Modal for the popup -->
+    <div id="popupModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="popupImg">
+    </div>
+
     <div class="header-background">
         <select onchange="window.location.href=this.value">
             <option value="" disabled selected>menu</option>
@@ -22,112 +111,129 @@
 
     <div id="stretching-vr" class="project">
         <h2><a href="https://store.steampowered.com/app/782420/RHCs_StretchingVr/" target="_blank">RHCs Stretching VR</a></h2>
-        <p>I created this game for my Capstone project at Sheridan. It is a VR exercise game, based around mini games. The title is a link to the store page.</p>
-        <!-- Add onclick event to open popup window -->
-        <img class="project-image-size" src="images/projects/strechingVr (1).jpg" onclick="openPopup(this.src)">
+        <p class="project-description">I created this game for my Capstone project at Sheridan. It is a VR exercise game, based around mini games. The title is a link to the store page.</p>
+        <div class="project-images">
+            <button class="prev-arrow" onclick="prevImage('stretching-vr')">&lt;</button>
+            <img class="project-image-size active" src="images/projects/strechingVr (1).jpg" onclick="openPopup(this.src)">
+            <button class="next-arrow" onclick="nextImage('stretching-vr')">&gt;</button>
         <img class="project-image-size" src="images/projects/strechingVr (3).jpg" onclick="openPopup(this.src)">
         <img class="project-image-size" src="images/projects/strechingVr (4).jpg" onclick="openPopup(this.src)">
         <img class="project-image-size" src="images/projects/strechingVr (5).jpg" onclick="openPopup(this.src)">
         <img class="project-image-size" src="images/projects/strechingVr (6).jpg" onclick="openPopup(this.src)">
     </div>
+    </div>
     <div id="book-suggester" class="project">
-        <h2><a href="https://rivercarley.github.io/quiz" target="_blank">Book Suggester</a></h2>
-        <p style="padding-bottom: 1vw;">A Project I completed in the second half of second year at OCADU. It is a book suggestion quiz based on the books I read that year. It works on mobile and browser but I prefer mobile. The title is a link to the webpage.</p>
+        <h2 class="h2center"><a href="https://rivercarley.github.io/quiz" target="_blank">Book Suggester</a></h2>
+        <p class="project-description2">A Project I completed in the second half of second year at OCADU. It is a book suggestion quiz based on the books I read that year. It works on mobile and browser but I prefer mobile. The title is a link to the webpage.</p>
         <!-- Add onclick event to open popup window -->
     </div>
     <div id="zine" class="project">
         <h2><a href="https://rivercarley.github.io/quiz"target="_blank">Website Zine</a></h2>
-        <p style="padding-bottom: 1vw;">A Project I completed in the second half of second year at OCADU. It is a accompanyment to the book suggester website. It's 8 page zine printed on a Risogrpah with just two inks. The back is a poster. The title is a link that takes you to the website it was based off of</p>
-        <img class="project-image-size" src="images/projects/4 (5) covers.jpg" onclick="openPopup(this.src)">
+        <p class="project-description">A Project I completed in the second half of second year at OCADU. It is a accompanyment to the book suggester website. It's 8 page zine printed on a Risogrpah with just two inks. The back is a poster. The title is a link that takes you to the website it was based off of</p>
+        <div class="project-images">
+            <button class="prev-arrow" onclick="prevImage('zine')">&lt;</button>
+        <img class="project-image-size active" src="images/projects/4 (5) covers.jpg" onclick="openPopup(this.src)">
+        <button class="next-arrow" onclick="nextImage('zine')">&gt;</button>
         <img class="project-image-size" src="images/projects/4 (2) page 2.jpg" onclick="openPopup(this.src)">
         <img class="project-image-size" src="images/projects/4 (3).jpg" onclick="openPopup(this.src)">
         <img class="project-image-size" src="images/projects/4 (4).jpg" onclick="openPopup(this.src)">
         <img class="project-image-size" src="images/projects/4 (1).jpg" onclick="openPopup(this.src)">
 
         <!-- Add onclick event to open popup window -->
+        </div>
     </div>
     <div id="The-Drain-Collector" class="project">
         <h2><a href="https://store.steampowered.com/app/778980/The_Drain_Collector/" target="_blank">The Drain Collector</a></h2>
-        <p style="padding-bottom: 1vw;">A project I completed in third year at Sherian. It's a one to two player game. The title is a link to the store page.</p>
-        <img class="project-image-size" src="images/projects/2 (1).jpg" onclick="openPopup(this.src)">
+        <p class="project-description">A project I completed in third year at Sherian. It's a one to two player game. The title is a link to the store page.</p>
+        <div class="project-images">
+            <button class="prev-arrow" onclick="prevImage('The-Drain-Collector')">&lt;</button>
+        <img class="project-image-size active" src="images/projects/2 (1).jpg" onclick="openPopup(this.src)">
+        <button class="next-arrow" onclick="nextImage('The-Drain-Collector')">&gt;</button>
         <img class="project-image-size" src="images/projects/2 (2).jpg" onclick="openPopup(this.src)">
         <img class="project-image-size" src="images/projects/2 (3).jpg" onclick="openPopup(this.src)">
         <img class="project-image-size" src="images/projects/2 (4).jpg" onclick="openPopup(this.src)">
-
+</div>
         <!-- Add onclick event to open popup window -->
     </div>
     <div id="shatter-scale" class="project">
-        <h2><a href="https://www.youtube.com/watch?v=sWkHf9_cDQU" target="_blank">Shatter Scale</a></h2>
-        <p style="padding-bottom: 1vw;">A Project I completed in the second half of third year at Sheridan, that I was intending to use as my capstone project. It's an endless climber VR game. The title is a link to a gameplay video.</p>
+        <h2 class="h2center"><a href="https://www.youtube.com/watch?v=sWkHf9_cDQU" target="_blank">Shatter Scale</a></h2>
+         <p class="project-description2">A Project I completed in the second half of third year at Sheridan, that I was intending to use as my capstone project. It's an endless climber VR game. The title is a link to a gameplay video.</p>
         <!-- Add onclick event to open popup window -->
     </div>
     <div id="eyes-of-march" class="project">
         <h2><a href="https://r1v1r.itch.io/eyesofmarch4" target="_blank">Eyes of March</a></h2>
-        <p style="padding-bottom: 1vw;">A project I completed in third year at Sherian. It's a VR game which uses only the headset. It was the first game I released. The title is a link to the store page</p>
-        <img class="project-image-size" src="images/projects/3 (1).png" onclick="openPopup(this.src)">
+        <p class="project-description">A project I completed in third year at Sherian. It's a VR game which uses only the headset. It was the first game I released. The title is a link to the store page</p>
+        <div class="project-images">
+            <button class="prev-arrow" onclick="prevImage('eyes-of-march')">&lt;</button>
+        <img class="project-image-size active"  src="images/projects/3 (1).png" onclick="openPopup(this.src)">
+        <button class="next-arrow" onclick="nextImage('eyes-of-march')">&gt;</button>
         <img class="project-image-size" src="images/projects/3 (2).png" onclick="openPopup(this.src)">
         <img class="project-image-size" src="images/projects/3 (3).png" onclick="openPopup(this.src)">
         <img class="project-image-size" src="images/projects/3 (4).png" onclick="openPopup(this.src)">
         <img class="project-image-size" src="images/projects/3 (5).png" onclick="openPopup(this.src)">
+        </div>
 
         <!-- Add onclick event to open popup window -->
     </div>
-
-    <!-- The Modal -->
-    <div class="modal" id="myModal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImg">
-    </div>
-
-    <script>
-        // Function to open popup window
-        function openPopup(imageSrc) {
-            // Show the modal
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("modalImg");
-            modal.style.display = "block";
-            modalImg.src = imageSrc;
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            var modal = document.getElementById("myModal");
-            modal.style.display = "none";
-        }
-    </script>
-
     <style>
-        /* Style for the header background */
-        .header-background {
+        /* Style for slideshow container */
+        .container {
             display: flex;
-            align-items: center; /* Align items vertically */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        /* Style for the select menu */
-        select {
-            margin-right: 1vw; /* Add some space between the menu and the heading */
+        .slideshow-container {
+            max-width: 100%;
         }
 
-        /* Style for the h1 */
-        h1 {
-            margin: 0; /* Remove default margin */
+        /* Style for images */
+        .slideshow-image {
+            display: none;
+            max-width: 30vw;
+            min-width: 30vw;
+            height: auto;
+            max-height: 40vw;
+            cursor: pointer;
         }
 
-        /* Style for project sections */
-        .project {
-            margin-top: 1vw; /* Add some space between projects */
+        /* Style for next and previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 1vw;
+            margin-top: -1vw;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
-        /* Style for project images */
-        .project-image-size {
-            max-width: 15vw; /* Ensure images don't exceed container width */
-            height: auto; /* Maintain aspect ratio */
-            cursor: pointer; /* Show pointer cursor on hover */
+        /* Positioning of previous button */
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
         }
 
-        /* Style for the modal */
+        /* Positioning of next button */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* Hover effect for buttons */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Modal styling */
         .modal {
-            display: none; /* Hide modal by default */
+            display: none;
             position: fixed;
             z-index: 1;
             padding-top: 50px;
@@ -139,7 +245,6 @@
             background-color: rgba(0, 0, 0, 0.9);
         }
 
-        /* Style for the modal content */
         .modal-content {
             margin: auto;
             display: block;
@@ -147,21 +252,115 @@
             max-height: 80%;
         }
 
-        /* Style for the close button */
         .close {
             position: absolute;
             top: 15px;
             right: 35px;
-            color: #fff;
+            color: #f1f1f1;
             font-size: 40px;
             font-weight: bold;
+            transition: 0.3s;
             cursor: pointer;
         }
 
-        /* Hover effect for close button */
-        .close:hover {
-            color: #ccc;
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
-    </style>
+        </style>
+ 
+    <script>
+        function prevImage(projectId) {
+            const projectImages = document.querySelectorAll(`#${projectId} .project-images img`);
+            const totalImages = projectImages.length;
+            let currentIndex = 0;
+            for (let i = 0; i < totalImages; i++) {
+                if (projectImages[i].classList.contains('active')) {
+                    currentIndex = i;
+                    break;
+                }
+            }
+            const prevIndex = (currentIndex - 1 + totalImages) % totalImages;
+            projectImages[currentIndex].classList.remove('active');
+            projectImages[prevIndex].classList.add('active');
+        }
+
+        function nextImage(projectId) {
+            const projectImages = document.querySelectorAll(`#${projectId} .project-images img`);
+            const totalImages = projectImages.length;
+            let currentIndex = 0;
+            for (let i = 0; i < totalImages; i++) {
+                if (projectImages[i].classList.contains('active')) {
+                    currentIndex = i;
+                    break;
+                }
+            }
+            const nextIndex = (currentIndex + 1) % totalImages;
+            projectImages[currentIndex].classList.remove('active');
+            projectImages[nextIndex].classList.add('active');
+        }
+        function closePopups() {
+        var popupModal = document.getElementById("popupModal");
+        var slideshowModal = document.getElementById("slideshowModal");
+        popupModal.style.display = "none";
+        slideshowModal.style.display = "none";
+    }
+
+    // Function to handle clicks outside the popup modal
+    window.onclick = function(event) {
+        var popupModal = document.getElementById("popupModal");
+        var slideshowModal = document.getElementById("slideshowModal");
+        if (event.target == popupModal || event.target == slideshowModal) {
+            closePopups();
+        }
+    };
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var images = document.getElementsByClassName("slideshow-image");
+        for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        }
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+        var popupModal = document.getElementById("popupModal");
+        var popupImg = document.getElementById("popupImg");
+        var images = document.querySelectorAll(".project-images img");
+        images.forEach(function(image) {
+            image.onclick = function() {
+                popupModal.style.display = "block";
+                popupImg.src = this.src;
+            };
+        });
+        var closeButtons = document.querySelectorAll(".modal .close");
+        closeButtons.forEach(function(button) {
+            button.onclick = function() {
+                popupModal.style.display = "none";
+                slideshowModal.style.display = "none"; // Make sure to hide slideshow modal too if it's open
+            };
+        });
+          // Image click event handlers
+    var images = document.querySelectorAll(".project-images img");
+    images.forEach(function(image) {
+        image.onclick = function() {
+            popupModal.style.display = "block";
+            popupImg.src = this.src;
+        };
+    });
+
+    // Close button click event handlers
+    var closeButtons = document.querySelectorAll(".modal .close");
+    closeButtons.forEach(function(button) {
+        button.onclick = function() {
+            closePopups();
+        };
+    });
+    </script>
 </body>
 </html>
