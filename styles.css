@@ -4,7 +4,7 @@ body{
 /* Add these styles to your existing styles.css file */
 .header-background {
     background-color: rgb(60, 60, 60); /* Set the background color to white */
-    padding: 10px; /* Add padding for spacing */
+    padding: 1vw; /* Add padding for spacing */
 }
 
 /* Style for the dropdown menu */
@@ -156,6 +156,6 @@ a{
     text-transform: uppercase; /* Convert text to uppercase */
     position: absolute; /* Ensure button stays in place */
     z-index: 1; /* Ensure button appears above slideshow */
-    top: 5vw;
-    left: 0.7vw;
+    top: 10%;
+    left: 1.2%;
 }
