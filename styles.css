@@ -23,9 +23,10 @@ select {
 }
 
 h1 {
-    text-align: center;
+    text-align: block;
     color:white;
     font-size: 2vw; /* Set the desired font size */
+    display: inline-block;
 }
 h2{
     font-size: 2vw; /* Set the desired font size */
@@ -161,6 +162,6 @@ a{
     text-transform: uppercase; /* Convert text to uppercase */
     position: absolute; /* Ensure button stays in place */
     z-index: 1; /* Ensure button appears above slideshow */
-    top: 10%;
+    top: 5vw;
     left: 1.2%;
 }
