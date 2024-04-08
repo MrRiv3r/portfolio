@@ -13,6 +13,8 @@
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
             height: 45vw; /* Fixed height */
+            min-height: 50vw;
+            max-height: 50vw;
             overflow: hidden; /* Hide any overflowing content */
             position: relative; /* Relative positioning for absolute children */
         }
@@ -20,6 +22,7 @@
         /* Style for the slideshow container */
         .slideshow-container-1 {
             max-width: 30vw;
+            min-height: 40vw;
             position: relative;
             margin: auto;
         }
@@ -139,12 +142,14 @@
 
     <script>
         var slideIndex = 0;
+        var scrollPosition = 0; // Initialize scroll position
         showSlides();
 
         function showSlides() {
             var i;
             var slides = document.getElementsByClassName("mySlides");
             var dots = document.getElementsByClassName("dot");
+            scrollPosition = window.scrollY;
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
@@ -155,6 +160,7 @@
             }
             slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
+            window.scrollTo(0, scrollPosition);
             setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
 
