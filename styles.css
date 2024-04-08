@@ -46,7 +46,16 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+}
+.grid-active {
+    position: absolute;
+    max-width: 75vw;
+    max-height: 150vw;
+    top: 0;
+    left: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #contact-info {
     width: 100%;

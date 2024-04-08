@@ -240,6 +240,23 @@ toggleButton.onclick = function() {
     var gridImages = document.getElementsByClassName("slideshow-image");
     var prevButton = document.querySelector(".prev");
     var nextButton = document.querySelector(".next");
+    var slideshowContainer = document.querySelector(".slideshow-container");
+
+// Toggle grid class
+slideshowContainer.classList.toggle("grid-active");
+
+// If grid is active, set the grid style
+if (slideshowContainer.classList.contains("grid-active")) {
+    slideshowContainer.style.top = "10%";
+    slideshowContainer.style.left = "20%";
+    slideshowContainer.style.maxHeight = "160vw"; // Corrected property name
+    slideshowContainer.style.transform = "none"; // Reset transform
+} else { // Otherwise, set the default style
+    slideshowContainer.style.top = "55%";
+    slideshowContainer.style.left = "50%";
+    slideshowContainer.style.maxHeight = "75vw"; // Corrected property name
+    slideshowContainer.style.transform = "translate(-50%, -50%)"; // Reset transform
+}
     for (var i = 0; i < gridImages.length; i++) {
         gridImages[i].classList.toggle("small-image");
         if (gridImages[i].style.display === "block" || gridImages[i].style.display === "") {
@@ -263,21 +280,25 @@ toggleButton.onclick = function() {
     }
 };
 
+
+
     </script>
 
     <style>
         /* Style for slideshow container */
-.slideshow-container {
-    max-width: 75vw;
-    max-height: 75vw;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-wrap: wrap; /* Allow images to wrap to the next row */
-    justify-content: center; /* Center align images horizontally */
-    align-items: center; /* Center align images vertically */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items at the top */
+            height:80vh;
+        }
+        .slideshow-container {
+            max-width: 75vw;
+        max-height: 55vw;
+        display: flex;
+        flex-wrap: wrap; /* Allow images to wrap to the next row */
+        justify-content: center; /* Center align images horizontally */
+        align-items: flex-start; /* Align images at the top */
 }
 
 /* Style for images */
