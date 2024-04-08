@@ -161,6 +161,8 @@ if (slideshowContainer.classList.contains("grid-active")) {
         // Change button text to "Slide Show"
         toggleButton.textContent = "Grid View";
     }
+    var currentSlideIndex = slideIndex - 1;
+    gridImages[currentSlideIndex].style.display = "block";
 };
     </script>
 
