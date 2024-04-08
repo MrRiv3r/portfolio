@@ -4,6 +4,7 @@ body{
 /* Add these styles to your existing styles.css file */
 .header-background {
     background-color: rgb(60, 60, 60); /* Set the background color to white */
+    min-width: 100%;
     padding: 1vw; /* Add padding for spacing */
 }
 
