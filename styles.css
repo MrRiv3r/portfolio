@@ -139,5 +139,14 @@ a{
     text-decoration: none;
     cursor: pointer;
 }
-
-
+#toggleButton {
+    font-size: 2vw; /* Set the desired font size */
+    background-color: black;
+    color: bisque;
+    text-align: center;
+    text-transform: uppercase; /* Convert text to uppercase */
+    position: absolute; /* Ensure button stays in place */
+    z-index: 1; /* Ensure button appears above slideshow */
+    top: 5vw;
+    left: 0.7vw;
+}

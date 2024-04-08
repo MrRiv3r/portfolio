@@ -188,6 +188,7 @@
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+        <button id="toggleButton">Grid View</button> <!-- Add toggle button -->
     </div>
 
     <!-- The Modal -->
@@ -234,30 +235,82 @@
         span.onclick = function() { 
             modal.style.display = "none";
         }
+        var toggleButton = document.getElementById("toggleButton");
+toggleButton.onclick = function() {
+    var gridImages = document.getElementsByClassName("slideshow-image");
+    var prevButton = document.querySelector(".prev");
+    var nextButton = document.querySelector(".next");
+    for (var i = 0; i < gridImages.length; i++) {
+        gridImages[i].classList.toggle("small-image");
+        if (gridImages[i].style.display === "block" || gridImages[i].style.display === "") {
+            gridImages[i].style.display = "none";
+        } else {
+            gridImages[i].style.display = "block";
+        }
+    }
+    // Toggle visibility of previous and next buttons
+    if (prevButton.style.display === "block" || prevButton.style.display === "") {
+        prevButton.style.display = "none";
+        nextButton.style.display = "none";
+        // Change button text to "Grid View"
+        toggleButton.textContent = "Slide Show";
+    
+    } else {
+        prevButton.style.display = "block";
+        nextButton.style.display = "block";
+        // Change button text to "Slide Show"
+        toggleButton.textContent = "Grid View";
+    }
+};
+
     </script>
 
     <style>
         /* Style for slideshow container */
+.slideshow-container {
+    max-width: 75vw;
+    max-height: 75vw;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap to the next row */
+    justify-content: center; /* Center align images horizontally */
+    align-items: center; /* Center align images vertically */
+}
+
+/* Style for images */
+.slideshow-image {
+    display: none;
+    max-width: 30vw;
+    min-width: 30vw;
+    height: auto;
+    max-height: 40vw;
+    cursor: pointer;
+}
+
+/* Additional specificity for small-image class */
+.slideshow-image.small-image {
+    max-width: calc(10% - 20px) !important;
+    min-width: calc(10% - 20px) !important;
+    max-height: auto !important;
+    cursor: pointer !important;
+    margin: 10px !important;
+}
+
+        /* Style for slideshow container */
         .container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
         }
 
-        .slideshow-container {
-            max-width: 100%;
-        }
 
-        /* Style for images */
-        .slideshow-image {
-            display: none;
-            max-width: 30vw;
-            min-width: 30vw;
-            height: auto;
-            max-height: 40vw;
-            cursor: pointer;
-        }
+
+        
 
         /* Style for next and previous buttons */
         .prev, .next {
