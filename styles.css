@@ -9,8 +9,10 @@ body{
 .header-background {
     background-color: rgb(60, 60, 60); /* Set the background color to white */
     min-width: 100%;
-    padding: 1vw; /* Add padding for spacing */
+    padding-top: 1vw; /* Add padding for spacing */
+    padding-bottom: 1vw; /* Add padding for spacing */
 }
+/* Ensure both the select menu and the button share the same class */
 
 /* Style for the dropdown menu */
 select {
@@ -163,5 +165,5 @@ a{
     position: absolute; /* Ensure button stays in place */
     z-index: 1; /* Ensure button appears above slideshow */
     top: 5vw;
-    left: 1.2%;
+    left: 0%;
 }
