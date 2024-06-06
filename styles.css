@@ -164,6 +164,6 @@ a{
     text-transform: uppercase; /* Convert text to uppercase */
     position: absolute; /* Ensure button stays in place */
     z-index: 1; /* Ensure button appears above slideshow */
-    top: 5vw;
+    top: 4vw;
     left: 0%;
 }
