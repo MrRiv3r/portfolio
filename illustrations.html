@@ -252,18 +252,19 @@
     // Toggle grid class
     slideshowContainer.classList.toggle("grid-active");
 
-    // If grid is active, set the grid style
-    if (slideshowContainer.classList.contains("grid-active")) {
-        slideshowContainer.style.top = "10vw";
-        slideshowContainer.style.left = "3vw";
-        slideshowContainer.style.maxHeight = "175vw"; // Corrected property name
-        slideshowContainer.style.transform = "none"; // Reset transform
-    } else { // Otherwise, set the default style
-        slideshowContainer.style.top = "55%";
-        slideshowContainer.style.left = "50%";
-        slideshowContainer.style.maxHeight = "75vw"; // Corrected property name
-        slideshowContainer.style.transform = "translate(-50%, -50%)"; // Reset transform
-    }
+// If grid is active, set the grid style
+if (slideshowContainer.classList.contains("grid-active")) {
+        slideshowContainer.style.top = "50%"; // Center vertically
+        slideshowContainer.style.left = "50%"; // Center horizontally
+        slideshowContainer.style.transform = "translate(-50%, -12vw)"; // Center using transform
+        slideshowContainer.style.maxHeight = "150vw"; // Adjust as needed
+}else{
+
+    slideshowContainer.style.top = "55%";
+    slideshowContainer.style.left = "50%";
+    slideshowContainer.style.maxHeight = "75vw"; // Corrected property name
+    slideshowContainer.style.transform = "translate(-50%, -50%)"; // Reset transform
+}
 
     // Loop through all images
     for (var i = 0; i < gridImages.length; i++) {
