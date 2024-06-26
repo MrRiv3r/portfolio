@@ -55,7 +55,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
 }
-/* .grid-active {
+.grid-active {
     position: absolute;
     max-width: 70vw;
     max-height: 150vw;
@@ -64,7 +64,7 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-} */
+} 
 #contact-info {
     width: 100%;
     height: 5%;
@@ -166,4 +166,23 @@ a{
     z-index: 1; /* Ensure button appears above slideshow */
     top: 4vw;
     left: 0%;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.slideshow-container {
+    max-width: 75vw;
+    max-height: 75vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap to the next row */
+    justify-content: center; /* Center align images horizontally */
+    align-items: center; /* Center align images vertically */
 }
