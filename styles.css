@@ -128,8 +128,7 @@ a{
     z-index: 1000; /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+
     overflow: auto; /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.9); /* Black with opacity */
     padding-top: 50px; /* Space for close button */
@@ -185,4 +184,12 @@ a{
     flex-wrap: wrap; /* Allow images to wrap to the next row */
     justify-content: center; /* Center align images horizontally */
     align-items: center; /* Center align images vertically */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%; /* Limit width to 80% of viewport */
+    max-height: 80%; /* Limit height to 80% of viewport height */
+    object-fit: contain; /* Maintain aspect ratio */
 }

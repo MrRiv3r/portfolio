@@ -153,6 +153,32 @@ if (slideshowContainer.classList.contains("grid-active")) {
     var currentSlideIndex = slideIndex - 1;
     gridImages[currentSlideIndex].style.display = "block";
 };
+// JavaScript for image pop-up
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("img01");
+var images = document.getElementsByClassName("slideshow-image");
+
+// Function to open modal and display clicked image
+for (var i = 0; i < images.length; i++) {
+    images[i].onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    }
+}
+
+// Close modal when clicked outside of the image
+modal.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Close modal when close button is clicked
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+
     </script>
 
     <style>

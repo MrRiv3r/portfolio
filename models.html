@@ -179,6 +179,31 @@ if (slideshowContainer.classList.contains("grid-active")) {
     gridImages[currentSlideIndex].style.display = "block";
 
 };
+// JavaScript for image pop-up
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("img01");
+var images = document.getElementsByClassName("slideshow-image");
+
+// Function to open modal and display clicked image
+for (var i = 0; i < images.length; i++) {
+    images[i].onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    }
+}
+
+// Close modal when clicked outside of the image
+modal.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Close modal when close button is clicked
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
 
 
     </script>
@@ -280,11 +305,14 @@ if (slideshowContainer.classList.contains("grid-active")) {
         }
 
         .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 80%;
-            max-height: 80%;
-        }
+    margin: auto;
+    display: block;
+    min-width: 50vw; /* Limit width to 80% of viewport */
+    min-height: 50vh; /* Limit height to 80% of viewport height */
+    max-width: 80%; /* Limit width to 80% of viewport */
+    max-height: 80%; /* Limit height to 80% of viewport height */
+    object-fit: contain; /* Maintain aspect ratio */
+}
 
         .close {
             position: absolute;
