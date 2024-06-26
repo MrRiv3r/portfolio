@@ -137,9 +137,9 @@
 
 // If grid is active, set the grid style
 if (slideshowContainer.classList.contains("grid-active")) {
-        slideshowContainer.style.top = "50%"; // Center vertically
+        slideshowContainer.style.top = "10vw"; // Center vertically
         slideshowContainer.style.left = "50%"; // Center horizontally
-        slideshowContainer.style.transform = "translate(-50%, -30vh)"; // Center using transform
+        slideshowContainer.style.transform = "translate(-50%, -0vw)"; // Center using transform
         slideshowContainer.style.maxHeight = "75vw"; // Adjust as needed
 }else{
 
@@ -148,6 +148,7 @@ if (slideshowContainer.classList.contains("grid-active")) {
     slideshowContainer.style.maxHeight = "75vw"; // Corrected property name
     slideshowContainer.style.transform = "translate(-50%, -50%)"; // Reset transform
 }
+
 
     // Loop through all images
     for (var i = 0; i < gridImages.length; i++) {
