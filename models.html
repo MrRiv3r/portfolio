@@ -331,6 +331,12 @@ span.onclick = function() {
                 max-height: 200vw; /* Allow the height to adjust automatically */
             }
         }
+        @media screen and (max-height:400px) {
+            .slideshow-image {
+                object-fit: contain; /* Maintain aspect ratio */
+                max-height: 85vh; /* Allow the height to adjust automatically */
+            }
+        }
     </style>
      <style>
         /* Style for the header background */
