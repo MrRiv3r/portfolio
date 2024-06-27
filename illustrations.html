@@ -190,8 +190,6 @@
             
             
 
-
-            <!-- Previous and Next buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
@@ -254,17 +252,20 @@
 
 // If grid is active, set the grid style
 if (slideshowContainer.classList.contains("grid-active")) {
-        slideshowContainer.style.top = "10vw"; // Center vertically
+        slideshowContainer.style.top = "7vw"; // Center vertically
         slideshowContainer.style.left = "50%"; // Center horizontally
         slideshowContainer.style.transform = "translate(-50%, -0vw)"; // Center using transform
-        slideshowContainer.style.maxHeight = "150vw"; // Adjust as needed
-}else{
-
-    slideshowContainer.style.top = "55%";
-    slideshowContainer.style.left = "50%";
-    slideshowContainer.style.maxHeight = "75vw"; // Corrected property name
-    slideshowContainer.style.transform = "translate(-50%, -50%)"; // Reset transform
+        slideshowContainer.style.maxHeight = "820vw"; // Adjust as needed
+        
 }
+else{
+
+slideshowContainer.style.top = "55%";
+slideshowContainer.style.left = "50%";
+slideshowContainer.style.maxHeight = "75vw"; // Corrected property name
+slideshowContainer.style.transform = "translate(-50%, -50%)"; // Reset transform
+}
+
 
     // Loop through all images
     for (var i = 0; i < gridImages.length; i++) {
@@ -331,25 +332,28 @@ span.onclick = function() {
             display: flex;
             justify-content: center;
             align-items: flex-start; /* Align items at the top */
-            height:80vh;
+     
         }
         .slideshow-container {
-            max-width: 75vw;
-        max-height: 55vw;
-        display: flex;
-        flex-wrap: wrap; /* Allow images to wrap to the next row */
-        justify-content: center; /* Center align images horizontally */
-        align-items: flex-start; /* Align images at the top */
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap to the next row */
+    justify-content: center; /* Center align images horizontally */
+    align-items: flex-start; /* Align images at the top */
+    width: 100%; /* Adjusted to take full width of parent container */
+    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 /* Style for images */
+/* Style for images */
 .slideshow-image {
     display: none;
-    max-width: 30vw;
-    min-width: 30vw;
+    max-width: 30vw; /* Adjust as per your design */
+    min-width: 30vw; /* Adjust as per your design */
     height: auto;
-    max-height: 40vw;
+    max-height: 40vw; /* Adjust as per your design */
     cursor: pointer;
+    margin: 0 auto; /* Center the image horizontally */
 }
 
 /* Additional specificity for small-image class */
@@ -358,18 +362,10 @@ span.onclick = function() {
     min-width: 20%  !important;
     max-height: auto !important;
     cursor: pointer !important;
-    margin: 0.5vw !important;
+    margin: 0vw !important;
 }
 
-        /* Style for slideshow container */
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
+     
 
 
         
@@ -426,8 +422,8 @@ span.onclick = function() {
     display: block;
     min-width: 50vw; /* Limit width to 80% of viewport */
     min-height: 50vh; /* Limit height to 80% of viewport height */
-    max-width: 80%; /* Limit width to 80% of viewport */
-    max-height: 80%; /* Limit height to 80% of viewport height */
+    max-width: 100%; /* Limit width to 80% of viewport */
+    max-height: 100%; /* Limit height to 80% of viewport height */
     object-fit: contain; /* Maintain aspect ratio */
 }
 
@@ -456,8 +452,6 @@ span.onclick = function() {
                 min-width: 70vw; /* Set the minimum width to 60% of the viewport width */
                 max-height: 200vw; /* Allow the height to adjust automatically */
             }
-            
-            
         }
     </style>
      <style>

@@ -130,11 +130,18 @@
 
 // If grid is active, set the grid style
 if (slideshowContainer.classList.contains("grid-active")) {
-        slideshowContainer.style.top = "10vw"; // Center vertically
+        slideshowContainer.style.top = "7vw"; // Center vertically
         slideshowContainer.style.left = "50%"; // Center horizontally
         slideshowContainer.style.transform = "translate(-50%, -0vw)"; // Center using transform
-        slideshowContainer.style.maxHeight = "60vw"; // Adjust as needed
+        slideshowContainer.style.maxHeight = "120vw"; // Adjust as needed
         
+}
+else{
+
+slideshowContainer.style.top = "55%";
+slideshowContainer.style.left = "50%";
+slideshowContainer.style.maxHeight = "75vw"; // Corrected property name
+slideshowContainer.style.transform = "translate(-50%, -50%)"; // Reset transform
 }
 
 
@@ -206,21 +213,25 @@ span.onclick = function() {
      
         }
         .slideshow-container {
- 
-        display: flex;
-        flex-wrap: wrap; /* Allow images to wrap to the next row */
-        justify-content: center; /* Center align images horizontally */
-        align-items: flex-start; /* Align images at the top */
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap to the next row */
+    justify-content: center; /* Center align images horizontally */
+    align-items: flex-start; /* Align images at the top */
+    width: 100%; /* Adjusted to take full width of parent container */
+    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 /* Style for images */
+/* Style for images */
 .slideshow-image {
     display: none;
-    max-width: 30vw;
-    min-width: 30vw;
+    max-width: 30vw; /* Adjust as per your design */
+    min-width: 30vw; /* Adjust as per your design */
     height: auto;
-    max-height: 40vw;
+    max-height: 40vw; /* Adjust as per your design */
     cursor: pointer;
+    margin: 0 auto; /* Center the image horizontally */
 }
 
 /* Additional specificity for small-image class */
