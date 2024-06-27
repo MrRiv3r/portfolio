@@ -45,7 +45,7 @@ h3 {
 
 /* Your existing styles for other elements */
 .slideshow-container {
-    max-width: 75vw;
+    max-width: 100vw;
     max-height: 75vw;
     position: absolute;
     top: 55%;
@@ -173,18 +173,7 @@ a{
     height: 100vh;
 }
 
-.slideshow-container {
-    max-width: 75vw;
-    max-height: 75vw;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-wrap: wrap; /* Allow images to wrap to the next row */
-    justify-content: center; /* Center align images horizontally */
-    align-items: center; /* Center align images vertically */
-}
+
 
 .modal-content {
     margin: auto;
