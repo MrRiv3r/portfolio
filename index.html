@@ -12,40 +12,56 @@
             display: flex; /* Use flexbox */
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
-            height: 45vw; /* Fixed height */
-            min-height: 50vw;
-            max-height: 50vw;
+            height: 25vw; /* Fixed height */
+            min-height: 30vw;
+            max-height: 30vw;
             overflow: hidden; /* Hide any overflowing content */
             position: relative; /* Relative positioning for absolute children */
         }
 
         /* Style for the slideshow container */
         .slideshow-container-1 {
-            max-width: 30vw;
-            min-height: 40vw;
-            position: relative;
+            max-width: 10vw;
+            min-height: 20vw;
             margin: auto;
         }
+        /* Style for the individual slides */
+.mySlides {
+    display: none; /* Hide all slides by default */
+    text-align: center; /* Center content inside slides */
+}
 
         /* Style for the images */
         .mySlides img {
-            min-width: 30vw;
-            max-height: 40vw; /* Make all images fill their container */
+            min-width: 10vw;
+            max-height: 20vw; /* Make all images fill their container */
+            min-height: 20vw;
             height: auto; /* Maintain aspect ratio */
+            justify-content: center; /* Center horizontally */
+            display: inline-block; /* Display images as inline-block for centering */
+            
+        }
+      
+        /* Style for the navigation dots */
+        .dot-container {
+            text-align: center; /* Center dots horizontally */
+            position: absolute !important; /* Position dots absolutely */
+            bottom: 20px; /* Adjust vertical position as needed */
+            left: 50%; /* Center dots horizontally */
+            transform: translateX(-50%); /* Center dots horizontally */
+            z-index: 999; /* Ensure dots are above slides */
         }
 
-        /* Style for the navigation dots */
         .dot {
             cursor: pointer;
-            height: 1vw;
-            width: 1vw;
-            margin:  0.2vw;
+            height: 10px; /* Adjust dot size */
+            width: 10px; /* Adjust dot size */
+            margin: 0 5px; /* Space between dots */
             background-color: #bbb;
             border-radius: 50%;
             display: inline-block;
             transition: background-color 0.6s ease;
         }
-
         /* Style for the active dot */
         .active {
             background-color: #717171;
@@ -114,21 +130,32 @@
             <div class="mySlides">
                 <img src="images/logos/1 (14).png" alt="Slide 10">
             </div>
+            <div class="mySlides">
+                <img src="images/art/hare.jpg" alt="Slide 11">
+            </div>
+            <div class="mySlides">
+                <img src="images/art/zues.jpg" alt="Slide 12">
+            </div>
+            <div class="mySlides">
+                <img src="images/art/realistic face 2.jpg" alt="Slide 13">
+            </div>
           
 
             <!-- Navigation dots -->
             <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-                <span class="dot" onclick="currentSlide(6)"></span>
-                <span class="dot" onclick="currentSlide(7)"></span>
-                <span class="dot" onclick="currentSlide(8)"></span>
-                <span class="dot" onclick="currentSlide(9)"></span>
-                <span class="dot" onclick="currentSlide(10)"></span>
-            
+                <span class="dot" ></span>
+                <span class="dot" ></span>
+                <span class="dot" ></span>
+                <span class="dot" ></span>
+                <span class="dot" ></span>
+                <span class="dot" ></span>
+                <span class="dot" ></span>
+                <span class="dot"></span>
+                <span class="dot" ></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
 
             </div>
         </div>
