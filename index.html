@@ -9,74 +9,40 @@
         /* Style for the wrapper div */
         .wrapper {
             background-color: black; /* Black background */
-            display: flex; /* Use flexbox */
-            justify-content: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
-            height: 25vw; /* Fixed height */
-            min-height: 30vw;
-            max-height: 30vw;
-            overflow: hidden; /* Hide any overflowing content */
-            position: relative; /* Relative positioning for absolute children */
+            overflow: hidden; /* Hide overflowing content */
+            position: relative; /* For positioning children absolutely */
+            height: 30vw; /* Fixed height, adjust as needed */
+            width: 100%; /* Full width */
         }
 
-        /* Style for the slideshow container */
-        .slideshow-container-1 {
-            max-width: 10vw;
-            min-height: 20vw;
-            margin: auto;
-        }
-        /* Style for the individual slides */
-.mySlides {
-    display: none; /* Hide all slides by default */
-    text-align: center; /* Center content inside slides */
-}
-
-        /* Style for the images */
-        .mySlides img {
-            min-width: 10vw;
-            max-height: 20vw; /* Make all images fill their container */
-            min-height: 20vw;
-            height: auto; /* Maintain aspect ratio */
-            justify-content: center; /* Center horizontally */
-            display: inline-block; /* Display images as inline-block for centering */
-            
-        }
-      
-        /* Style for the navigation dots */
-        .dot-container {
-            text-align: center; /* Center dots horizontally */
-            position: absolute !important; /* Position dots absolutely */
-            bottom: 20px; /* Adjust vertical position as needed */
-            left: 50%; /* Center dots horizontally */
-            transform: translateX(-50%); /* Center dots horizontally */
-            z-index: 999; /* Ensure dots are above slides */
+        /* Style for the banner container */
+        .banner-container {
+            display: flex; /* Align images horizontally */
+            position: absolute; /* Allows for absolute positioning */
+            height: 100%; /* Match wrapper height */
+            width: 200%; /* Set width to accommodate scrolling */
+            white-space: nowrap; /* Prevent wrapping of images */
         }
 
-        .dot {
-            cursor: pointer;
-            height: 1vw; /* Adjust dot size */
-            width: 1vw; /* Adjust dot size */
-            margin: 0 0.1vw; /* Space between dots */
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-        /* Style for the active dot */
-        .active {
-            background-color: #717171;
+        /* Style for individual images */
+        .banner-container img {
+            height: 100%; /* Full height of the wrapper */
+            width: auto; /* Maintain aspect ratio */
+            display: inline-block; /* Inline-block for horizontal alignment */
         }
 
-        /* Style for the text */
-        .slide-text {
-            text-align: center;
-            color: white;
-            font-size: 3vw;
+        /* Keyframes for scrolling animation */
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
         }
     </style>
 </head>
 <body>
- 
     <div class="header-background">
         <select onchange="window.location.href=this.value">
             <option value="" disabled selected>menu</option>
@@ -89,76 +55,26 @@
             <option value="orders.html">Orders</option>
         </select>
         <h1>River Carley's Portfolio</h1>
-        </div>
+    </div>
 
     <!-- Wrapper div with black background -->
     <div class="wrapper">
-        <!-- Slideshow container -->
-        <div class="slideshow-container">
-            <!-- Slides -->
-            <div class="mySlides">
-                <img src="images/logos/1 (26).png" alt="Slide 1">
-            </div>
-
-            <div class="mySlides">
-                <img src="images/art/river-carley-rhc24-0.jpg" alt="Slide 2">
-            </div>
-
-            <div class="mySlides">
-                <img src="images/models/model1 (32).jpg" alt="Slide 3">
-            </div>
-
-            <div class="mySlides">
-                <img src="images/models/model1 (13).jpg" alt="Slide 4">
-            </div>
-
-            <div class="mySlides">
-                <img src="images/models/model1 (30).jpg" alt="Slide 5">
-            </div>
-
-            <div class="mySlides">
-                <img src="images/art/2 (60).jpg" alt="Slide 6">
-            </div>
-            <div class="mySlides">
-                <img src="images/art/2 (84).jpg" alt="Slide 7">
-            </div>
-            <div class="mySlides">
-                <img src="images/art/river-carley-self-portrait.jpg" alt="Slide 8">
-            </div>
-            <div class="mySlides">
-                <img src="images/art/2 (33).jpg" alt="Slide 9">
-            </div>
-            <div class="mySlides">
-                <img src="images/logos/1 (14).png" alt="Slide 10">
-            </div>
-            <div class="mySlides">
-                <img src="images/art/hare.jpg" alt="Slide 11">
-            </div>
-            <div class="mySlides">
-                <img src="images/art/zues.jpg" alt="Slide 12">
-            </div>
-            <div class="mySlides">
-                <img src="images/art/realistic face 2.jpg" alt="Slide 13">
-            </div>
-          
-
-            <!-- Navigation dots -->
-            <div style="text-align:center">
-                <span class="dot" ></span>
-                <span class="dot" ></span>
-                <span class="dot" ></span>
-                <span class="dot" ></span>
-                <span class="dot" ></span>
-                <span class="dot" ></span>
-                <span class="dot" ></span>
-                <span class="dot"></span>
-                <span class="dot" ></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-
-            </div>
+        <!-- Banner container -->
+        <div class="banner-container">
+            <!-- Images to create a seamless effect -->
+            <img src="images/logos/1 (26).png" alt="Slide 1">
+            <img src="images/art/river-carley-rhc24-0.jpg" alt="Slide 2">
+            <img src="images/models/model1 (32).jpg" alt="Slide 3">
+            <img src="images/models/model1 (13).jpg" alt="Slide 4">
+            <img src="images/models/model1 (30).jpg" alt="Slide 5">
+            <img src="images/art/2 (60).jpg" alt="Slide 6">
+            <img src="images/art/2 (84).jpg" alt="Slide 7">
+            <img src="images/art/river-carley-self-portrait.jpg" alt="Slide 8">
+            <img src="images/art/2 (33).jpg" alt="Slide 9">
+            <img src="images/logos/1 (14).png" alt="Slide 10">
+            <img src="images/art/hare.jpg" alt="Slide 11">
+            <img src="images/art/zues.jpg" alt="Slide 12">
+            <img src="images/art/realistic face 2.jpg" alt="Slide 13">
         </div>
     </div>
 
@@ -167,51 +83,42 @@
     <br>
     <p class="slide-text">This is a website made by me to display past work and acts as a catalog to buy prints from which can be done through the order page in the drop down menu. </p>
 
-
     <script>
-        var slideIndex = 0;
-        var scrollPosition = 0; // Initialize scroll position
-        showSlides();
+        function calculateTotalWidth() {
+            const images = document.querySelectorAll('.banner-container img');
+            let totalWidth = 0;
 
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            scrollPosition = window.scrollY;
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            window.scrollTo(0, scrollPosition);
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
+            images.forEach(img => {
+                totalWidth += img.offsetWidth;
+            });
+
+            return totalWidth;
         }
 
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
+        function duplicateImages() {
+            const container = document.querySelector('.banner-container');
+            const images = Array.from(container.querySelectorAll('img'));
+            const totalWidth = calculateTotalWidth();
+            const wrapperWidth = document.querySelector('.wrapper').offsetWidth;
+
+            // Duplicate the images and append them to the container
+            images.forEach(img => {
+                const clone = img.cloneNode(true);
+                container.appendChild(clone);
+            });
+
+            // Set the container width to accommodate all images
+            container.style.width = `${totalWidth * 1}px`;
+
+            // Set the animation duration
+            const scrollDuration = 10; // Desired duration in seconds
+            const animationDuration = (totalWidth / wrapperWidth) * scrollDuration;
+            container.style.animation = `scroll ${animationDuration}s linear infinite`;
         }
+
+        window.onload = function() {
+            duplicateImages();
+        };
     </script>
-     <style>
-        /* Style for the header background */
-        .header-background {
-            display: flex;
-            align-items: center; /* Align items vertically */
-        }
-
-        /* Style for the select menu */
-        select {
-            margin-right: 10px; /* Add some space between the menu and the heading */
-        }
-
-        /* Style for the h1 */
-        h1 {
-            margin: 0; /* Remove default margin */
-        }
-    </style>
 </body>
 </html>
