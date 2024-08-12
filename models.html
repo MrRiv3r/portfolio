@@ -24,7 +24,7 @@
     <div class="container">
         <div class="slideshow-container">
             <!-- Slides -->
-            <img class="slideshow-image" src="images/models/model1 (1).jpeg" alt="Slide 1">
+            <img class="slideshow-image" src="images/models/model1 (1).jpeg" alt="Slide 1"data-tooltip="Logo 1">
             <img class="slideshow-image" src="images/models/model1 (1).jpg" alt="Slide 2">
             <img class="slideshow-image" src="images/models/model1 (1).png" alt="Slide 3">
             <img class="slideshow-image" src="images/models/model1 (10).jpg" alt="Slide 4">
@@ -202,13 +202,33 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('toggleButton');
     const tooltip = document.getElementById('tooltip');
+    const images = document.getElementsByClassName('slideshow-image');
+    const button = document.getElementById('toggleButton');
+    
+    // Store the original tooltip text
+    const originalTooltipText = tooltip.innerHTML;
 
+    // Tooltip behavior for images
+    Array.from(images).forEach(image => {
+        image.addEventListener('mousemove', (e) => {
+            tooltip.style.display = 'block'; // Show tooltip
+            tooltip.style.left = `${e.pageX + 10}px`; // Position tooltip slightly to the right of the cursor
+            tooltip.style.top = `${e.pageY + 10}px`; // Position tooltip slightly below the cursor
+            tooltip.innerHTML = image.getAttribute('data-tooltip'); // Update tooltip text
+        });
+
+        image.addEventListener('mouseleave', () => {
+            tooltip.style.display = 'none'; // Hide tooltip when not hovering
+        });
+    });
+
+    // Tooltip behavior for button
     button.addEventListener('mousemove', (e) => {
         tooltip.style.display = 'block'; // Show tooltip
         tooltip.style.left = `${e.pageX + 10}px`; // Position tooltip slightly to the right of the cursor
         tooltip.style.top = `${e.pageY + 10}px`; // Position tooltip slightly below the cursor
+        tooltip.innerHTML = originalTooltipText; // Revert to the original tooltip text
     });
 
     button.addEventListener('mouseleave', () => {
