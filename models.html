@@ -224,14 +224,26 @@ document.addEventListener('DOMContentLoaded', () => {
             tooltip.style.display = 'none'; // Hide tooltip when not hovering
             document.body.classList.remove("hide-cursor");
         });
+        image.addEventListener('touchstart', () => {
+                image.classList.add('hover-effect');
+            });
+
+            image.addEventListener('touchend', () => {
+                image.classList.remove('hover-effect');
+            });
     });
 
     // Tooltip behavior for button
     button.addEventListener('mousemove', (e) => {
         tooltip.style.display = 'block'; // Show tooltip
-        tooltip.style.left = `${e.pageX + 10}px`; // Position tooltip slightly to the right of the cursor
-        tooltip.style.top = `${e.pageY + 10}px`; // Position tooltip slightly below the cursor
-        tooltip.innerHTML = originalTooltipText; // Revert to the original tooltip text
+            tooltip.innerHTML = originalTooltipText; // Revert to the original tooltip text
+
+            // Position tooltip centered horizontally
+            const viewportWidth = window.innerWidth;
+            const tooltipWidth = tooltip.offsetWidth;
+
+            tooltip.style.left = `${(viewportWidth - tooltipWidth) / 2}px`;
+            tooltip.style.top = `${e.pageY + 10}px`; // Position tooltip slightly below the cursor
     });
 
     button.addEventListener('mouseleave', () => {
@@ -244,19 +256,25 @@ document.addEventListener('DOMContentLoaded', () => {
     </script>
 
     <style>
+        .slideshow-image:hover,
+.slideshow-image.hover-effect {
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
          .hide-cursor {
     cursor: none;
 }
             #tooltip {
     display: none; /* Hidden by default */
-    position: absolute; /* Positioned relative to the button */
+    position: fixed; /* Positioned relative to the button */
     background-color: #333; /* Background color of the tooltip */
     color: white; /* Text color of the tooltip */
     padding: 5px; /* Padding around the text */
     border-radius: 3px; /* Rounded corners */
     font-size: 1vw; /* Font size */
     white-space: nowrap; /* Prevent line breaks */
-    z-index: 10; /* Ensure it's on top of other content */
+    z-index: 1000; /* Ensure it's on top of other content */
 }
           #toggleButton {
             width: 100vw;
@@ -304,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
 .slideshow-image.small-image {
     max-width: 20% !important;
     min-width: 20%  !important;
-    max-height: auto !important;
+    max-height: fit-content !important;
     margin: 0vw !important;
 }
 
@@ -395,12 +413,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 min-width: 70vw; /* Set the minimum width to 60% of the viewport width */
                 max-height: 200vw; /* Allow the height to adjust automatically */
             }
+            #tooltip {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the button */
+    background-color: #333; /* Background color of the tooltip */
+    color: white; /* Text color of the tooltip */
+    padding: 5px; /* Padding around the text */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 3vw; /* Font size */
+    white-space: nowrap; /* Prevent line breaks */
+    z-index: 0; /* Ensure it's on top of other content */
+}
         }
         @media screen and (max-height:400px) {
             .slideshow-image {
                 object-fit: contain; /* Maintain aspect ratio */
                 max-height: 85vh; /* Allow the height to adjust automatically */
             }
+            #tooltip {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the button */
+    background-color: #333; /* Background color of the tooltip */
+    color: white; /* Text color of the tooltip */
+    padding: 5px; /* Padding around the text */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 3vw; /* Font size */
+    white-space: nowrap; /* Prevent line breaks */
+    z-index: 10; /* Ensure it's on top of other content */
+}
         }
     </style>
      <style>
