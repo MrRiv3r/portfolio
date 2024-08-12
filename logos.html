@@ -20,7 +20,7 @@
         </select>
         <h1>Logos</h1>
     </div>
-
+    <div id="tooltip">Images in slide show view may be distorted. <br>click image or change to grid few for origianl apect ratio</div>
     <div class="container">
         <div class="slideshow-container">
             <!-- Slides -->
@@ -189,6 +189,20 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() { 
     modal.style.display = "none";
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('toggleButton');
+    const tooltip = document.getElementById('tooltip');
+
+    button.addEventListener('mousemove', (e) => {
+        tooltip.style.display = 'block'; // Show tooltip
+        tooltip.style.left = `${e.pageX + 10}px`; // Position tooltip slightly to the right of the cursor
+        tooltip.style.top = `${e.pageY + 10}px`; // Position tooltip slightly below the cursor
+    });
+
+    button.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none'; // Hide tooltip when not hovering
+    });
+});
 
 
     </script>
@@ -329,6 +343,31 @@ span.onclick = function() {
         }
     </style>
      <style>
+            #tooltip {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the button */
+    background-color: #333; /* Background color of the tooltip */
+    color: white; /* Text color of the tooltip */
+    padding: 5px; /* Padding around the text */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 1vw; /* Font size */
+    white-space: nowrap; /* Prevent line breaks */
+    z-index: 10; /* Ensure it's on top of other content */
+}
+          #toggleButton {
+            width: 100vw;
+            height: 3vw;
+            background-color: #000000; /* Default background color */
+            color: white; /* Default text color */
+            border: none; /* Remove border */
+            font-size: 1.5vw; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
+
+        #toggleButton:hover {
+            background-color: #868686; /* Change background color on hover */
+        }
         /* Style for the header background */
         .header-background {
             display: flex;
