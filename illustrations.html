@@ -204,6 +204,8 @@
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
+        <div id="text-box">Text for the full-screen image</div> <!-- Add this line for the text box -->
+
     </div>
 
     <script>
@@ -374,12 +376,71 @@ document.addEventListener('DOMContentLoaded', () => {
         tooltip.style.display = 'none'; // Hide tooltip when not hovering
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const textBox = document.getElementById('text-box');
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("img01");
+    const closeModal = document.getElementsByClassName("close")[0];
+    const images = document.getElementsByClassName("slideshow-image");
+
+    // Function to open full-screen modal and show text box
+    function openFullScreen(img) {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        textBox.innerHTML = img.getAttribute('data-tooltip'); // Set text box content
+        textBox.style.display = 'block'; // Show text box
+    }
+
+    // Add click event to images
+    Array.from(images).forEach(image => {
+        image.addEventListener('click', function() {
+            openFullScreen(this);
+        });
+    });
+
+    // Close modal when clicking outside the image
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            textBox.style.display = 'none'; // Hide text box when closing modal
+        }
+    };
+
+    // Close modal when the close button is clicked
+    closeModal.onclick = function() { 
+        modal.style.display = "none";
+        textBox.style.display = 'none'; // Hide text box when closing modal
+    };
+    
+    // Hide text box when pressing Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            modal.style.display = 'none';
+            textBox.style.display = 'none'; // Hide text box on Escape
+        }
+    });
+});
 
 
 
     </script>
 
     <style>
+        #text-box {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the modal */
+    bottom: 5vh; /* Position at the bottom with some padding */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+    color: white; /* Text color */
+    padding: 10px; /* Padding around the text */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    font-size: 1.5vw; /* Font size */
+    text-align: center; /* Center text horizontally */
+    border-radius: 5px; /* Rounded corners */
+    z-index: 20; /* Ensure it's above the image */
+}
         .slideshow-image:hover,
 .slideshow-image.hover-effect {
     opacity: 0.8;
@@ -508,8 +569,8 @@ document.addEventListener('DOMContentLoaded', () => {
     display: block;
     min-width: 50vw; /* Limit width to 80% of viewport */
     min-height: 50vh; /* Limit height to 80% of viewport height */
-    max-width: 100%; /* Limit width to 80% of viewport */
-    max-height: 100%; /* Limit height to 80% of viewport height */
+    max-width: 90%; /* Limit width to 80% of viewport */
+    max-height: 90%; /* Limit height to 80% of viewport height */
     object-fit: contain; /* Maintain aspect ratio */
 }
 
