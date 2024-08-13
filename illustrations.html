@@ -20,6 +20,7 @@
             <option value="index.html">Home</option>
         </select>
         <h1>Illustrations</h1>
+        <h2>Use arrow keys or next and preivous button to advance images. Some images may be destored in slide show vew, to see origianl apsect ratio go to grid view or click image</h2>
     </div>
 
     <div id="tooltip">Images in slide show view may be distorted. <br>click image or change to grid few for origianl apect ratio</div>
@@ -194,6 +195,7 @@
             
             
 
+          
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
@@ -204,8 +206,7 @@
     <div id="myModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="img01">
-        <div id="text-box">Text for the full-screen image</div> <!-- Add this line for the text box -->
-
+         <div id="text-box">Text for the full-screen image</div> <!-- Add this line for the text box -->
     </div>
 
     <script>
@@ -231,6 +232,7 @@
             }
             slides[slideIndex-1].style.display = "block";
         }
+        
 
         // JavaScript for image pop-up
         var modal = document.getElementById("myModal");
@@ -261,7 +263,7 @@ if (slideshowContainer.classList.contains("grid-active")) {
         slideshowContainer.style.top = "7vw"; // Center vertically
         slideshowContainer.style.left = "50%"; // Center horizontally
         slideshowContainer.style.transform = "translate(-50%, -0vw)"; // Center using transform
-        slideshowContainer.style.maxHeight = "900vw"; // Adjust as needed
+        slideshowContainer.style.maxHeight = "120vw"; // Adjust as needed
         
 }
 else{
@@ -339,9 +341,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tooltip behavior for images
     Array.from(images).forEach(image => {
         image.addEventListener('mousemove', (e) => {
+            const tooltipWidth = tooltip.offsetWidth;
+            const tooltipHeight = tooltip.offsetHeight;
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            let left = e.pageX + 10;
+            let top = e.pageY + 10;
+
+            // Adjust tooltip position if it's near the right edge
+            if (left + tooltipWidth > viewportWidth) {
+                left = e.pageX - tooltipWidth - 10;
+            }
+
+            // Adjust tooltip position if it's near the bottom edge
+            if (top + tooltipHeight > viewportHeight) {
+                top = e.pageY - tooltipHeight - 10;
+            }
+
             tooltip.style.display = 'block'; // Show tooltip
-            tooltip.style.left = `${e.pageX + 10}px`; // Position tooltip slightly to the right of the cursor
-            tooltip.style.top = `${e.pageY + 10}px`; // Position tooltip slightly below the cursor
+            tooltip.style.left = `${left}px`; // Position tooltip slightly to the right of the cursor
+            tooltip.style.top = `${top}px`; // Position tooltip slightly below the cursor
             tooltip.innerHTML = image.getAttribute('data-tooltip'); // Update tooltip text
             document.body.classList.add("hide-cursor");
         });
@@ -350,32 +370,30 @@ document.addEventListener('DOMContentLoaded', () => {
             tooltip.style.display = 'none'; // Hide tooltip when not hovering
             document.body.classList.remove("hide-cursor");
         });
-        image.addEventListener('touchstart', () => {
-                image.classList.add('hover-effect');
-            });
-
-            image.addEventListener('touchend', () => {
-                image.classList.remove('hover-effect');
-            });
     });
 
     // Tooltip behavior for button
     button.addEventListener('mousemove', (e) => {
         tooltip.style.display = 'block'; // Show tooltip
-            tooltip.innerHTML = originalTooltipText; // Revert to the original tooltip text
+        tooltip.innerHTML = originalTooltipText; // Revert to the original tooltip text
 
-            // Position tooltip centered horizontally
-            const viewportWidth = window.innerWidth;
-            const tooltipWidth = tooltip.offsetWidth;
+        // Center tooltip horizontally relative to the viewport
+        const viewportWidth = window.innerWidth;
+        const tooltipWidth = tooltip.offsetWidth;
 
-            tooltip.style.left = `${(viewportWidth - tooltipWidth) / 2}px`;
-            tooltip.style.top = `${e.pageY + 10}px`; // Position tooltip slightly below the cursor
+        let left = (viewportWidth - tooltipWidth) / 2;
+        let top = e.pageY + 10; // Position tooltip slightly below the cursor
+
+        tooltip.style.left = `${left}px`;
+        tooltip.style.top = `${top}px`;
     });
 
     button.addEventListener('mouseleave', () => {
         tooltip.style.display = 'none'; // Hide tooltip when not hovering
     });
 });
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const textBox = document.getElementById('text-box');
     const modal = document.getElementById("myModal");
@@ -420,13 +438,246 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    var slideshowContainer = document.querySelector(".slideshow-container");
+    var toggleButton = document.getElementById("toggleButton");
+    var prevButton = document.querySelector(".prev");
+    var nextButton = document.querySelector(".next");
+
+    // Set default view to grid
+    slideshowContainer.classList.add("grid-active");
+    toggleButton.textContent = "Slide Show";
+
+    // Apply grid view styles
+    if (slideshowContainer.classList.contains("grid-active")) {
+        slideshowContainer.style.top = "7vw"; // Center vertically
+        slideshowContainer.style.left = "50%"; // Center horizontally
+        slideshowContainer.style.transform = "translate(-50%, -0vw)"; // Center using transform
+        slideshowContainer.style.maxHeight = "120vw"; // Adjust as needed
+
+        // Hide previous and next buttons in grid view
+        if (prevButton && nextButton) {
+            prevButton.style.display = "none";
+            nextButton.style.display = "none";
+        }
+        
+        // Ensure images are displayed in grid view
+        var gridImages = document.getElementsByClassName("slideshow-image");
+        for (var i = 0; i < gridImages.length; i++) {
+            gridImages[i].classList.add("small-image");
+            gridImages[i].style.display = "block"; // Ensure images are displayed in grid view
+        }
+    }
+
+    // Handle toggle button click
+    toggleButton.onclick = function() {
+        if (slideshowContainer.classList.contains("grid-active")) {
+            // Switch to slideshow view
+            slideshowContainer.classList.remove("grid-active");
+            toggleButton.textContent = "Grid View";
+            
+            // Reset styles for slideshow view
+            slideshowContainer.style.top = "";
+            slideshowContainer.style.left = "";
+            slideshowContainer.style.transform = "";
+            slideshowContainer.style.maxHeight = "";
+
+            // Show previous and next buttons in slideshow view
+            if (prevButton && nextButton) {
+                prevButton.style.display = "block";
+                nextButton.style.display = "block";
+            }
+
+            // Reset image display for slideshow view
+            var gridImages = document.getElementsByClassName("slideshow-image");
+            for (var i = 0; i < gridImages.length; i++) {
+                gridImages[i].classList.remove("small-image");
+                gridImages[i].style.display = "none"; // Hide images in slideshow view
+            }
+        } else {
+            // Switch to grid view
+            slideshowContainer.classList.add("grid-active");
+            toggleButton.textContent = "Slide Show";
+            
+            // Apply grid view styles
+            slideshowContainer.style.top = "7vw"; // Center vertically
+            slideshowContainer.style.left = "50%"; // Center horizontally
+            slideshowContainer.style.transform = "translate(-50%, -0vw)"; // Center using transform
+            slideshowContainer.style.maxHeight = "120vw"; // Adjust as needed
+
+            // Hide previous and next buttons in grid view
+            if (prevButton && nextButton) {
+                prevButton.style.display = "none";
+                nextButton.style.display = "none";
+            }
+
+            // Ensure images are displayed in grid view
+            var gridImages = document.getElementsByClassName("slideshow-image");
+            for (var i = 0; i < gridImages.length; i++) {
+                gridImages[i].classList.add("small-image");
+                gridImages[i].style.display = "block"; // Ensure images are displayed in grid view
+            }
+        }
+    };
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const slideshowContainer = document.querySelector(".slideshow-container");
+    const toggleButton = document.getElementById("toggleButton");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
+    const header = document.querySelector(".header-background h2");
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Debug: Check if elements are selected correctly
+    console.log('slideshowContainer:', slideshowContainer);
+    console.log('toggleButton:', toggleButton);
+    console.log('prevButton:', prevButton);
+    console.log('nextButton:', nextButton);
+    console.log('header:', header);
+
+    // Function to show the header
+    function showHeader() {
+        console.log('Showing header');
+        header.style.display = "block";
+    }
+
+    // Function to hide the header
+    function hideHeader() {
+        console.log('Hiding header');
+        header.style.display = "none";
+    }
+
+    // Function to apply grid view styles
+    function applyGridView() {
+        slideshowContainer.style.top = "7vw";
+        slideshowContainer.style.left = "50%";
+        slideshowContainer.style.transform = "translate(-50%, -0vw)";
+        slideshowContainer.style.maxHeight = "900vw";
+
+        if (prevButton && nextButton) {
+            prevButton.style.display = "none";
+            nextButton.style.display = "none";
+        }
+
+        var gridImages = document.getElementsByClassName("slideshow-image");
+        for (var i = 0; i < gridImages.length; i++) {
+            gridImages[i].classList.add("small-image");
+            gridImages[i].style.display = "block";
+        }
+    }
+
+    // Function to apply slideshow view styles
+    function applySlideshowView() {
+        slideshowContainer.style.top = "";
+        slideshowContainer.style.left = "";
+        slideshowContainer.style.transform = "";
+        slideshowContainer.style.maxHeight = "";
+
+        if (prevButton && nextButton) {
+            prevButton.style.display = "block";
+            nextButton.style.display = "block";
+        }
+
+        var gridImages = document.getElementsByClassName("slideshow-image");
+        for (var i = 0; i < gridImages.length; i++) {
+            gridImages[i].classList.remove("small-image");
+            gridImages[i].style.display = "none";
+        }
+    }
+
+    // Toggle button click handler
+    toggleButton.onclick = function() {
+        console.log('Toggle button clicked');
+        if (slideshowContainer.classList.contains("grid-active")) {
+            // Switch to slideshow view
+            console.log('Switching to slideshow view');
+            slideshowContainer.classList.remove("grid-active");
+            toggleButton.textContent = "Grid View";
+            applySlideshowView();
+            showHeader(); // Show header when switching to slideshow view
+            // Add event listeners to hide header on prev/next button clicks
+            if (prevButton) prevButton.addEventListener('click', hideHeader);
+            if (nextButton) nextButton.addEventListener('click', hideHeader);
+            document.addEventListener('keydown', hideHeader);
+        } else {
+            // Switch to grid view
+            console.log('Switching to grid view');
+            slideshowContainer.classList.add("grid-active");
+            toggleButton.textContent = "Slide Show";
+            applyGridView();
+            hideHeader(); // Hide header when switching to grid view
+            // Remove event listeners to prevent header from hiding in grid view
+            if (prevButton) prevButton.removeEventListener('click', hideHeader);
+            if (nextButton) nextButton.removeEventListener('click', hideHeader);
+            document.removeEventListener('keydown', hideHeader);
+        }
+    };
+    function handleKeyDown(event) {
+    console.log('Key pressed:', event.key);
+    if (event.key === "ArrowLeft" && toggleButton.textContent !="Slide Show") {
+        event.preventDefault(); // Prevent default behavior
+        plusSlides(-1); // Trigger previous slide
+    } else if (event.key === "ArrowRight" && toggleButton.textContent !="Slide Show") {
+        event.preventDefault(); // Prevent default behavior
+        plusSlides(1); // Trigger next slide
+    }
+}
+
+
+    // Initially hide the header
+    hideHeader();
+});
+
+
+
+
 
 
 
     </script>
 
     <style>
-        #text-box {
+
+
+
+
+                .header-background h2 {
+    display: none; /* Hidden by default */
+    font-size: 2vw; /* Adjust font size as needed */
+    color: #000; /* Text color */
+    /* Add other styling as needed */
+}
+
+        .header-background {
+    position: relative;
+}
+
+.header-background h2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block; /* Default display state */
+    z-index: 999; /* Ensure it's on top */
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0.5); /* Background for better readability */
+    padding: 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 2vw; /* Font size */
+    text-align: center; /* Center text horizontally */
+}
+
+/* Hide the header by default when in slideshow view */
+.slideshow-container.grid-active ~ .header-background h2 {
+    display: none;
+}
+
+
+
+
+
+
+#text-box {
     display: none; /* Hidden by default */
     position: absolute; /* Positioned relative to the modal */
     bottom: 5vh; /* Position at the bottom with some padding */
