@@ -41,6 +41,8 @@ h3 {
     font-size: 2vw; /* Set the desired font size */
     padding-top: 2vw;
     padding-bottom: 2vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 /* Your existing styles for other elements */
