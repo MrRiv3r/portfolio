@@ -21,10 +21,29 @@
         <h1>Orders</h1>
     </div>
     <div id="Orders" class="Orders">
-        <h3 style="margin-bottom: -2.5vw;">To place an order pleae email me with the image ID, which can be obtained by hovering over the image you would like a print of. include in the email the rough size you would like which i will do my best to accomidate. also include your address so i can calculate shipping costs and method. lastly prints can be done on canvas, poster paper, and a varriety of objects and clothing, so include on what medium you would like the print to be on. I will get back to you with the size i can print the image at, an preview of the print, the cost of printing and shipping, and the best estimate on how long it will take to be delivered. All payments are done through etransfer and printing is done by a third party. <br> <br>If you have any questions feel free to meail me at the same email </h3>
+        <h3 style="margin-bottom: -2.5vw;">To place an order please email me with the image ID, which can be obtained by hovering over the image you would like a print of. Include in the email the rough size you would like, which I will do my best to accommodate. Also include your address so I can calculate shipping costs and method. Lastly, prints can be done on canvas, poster paper, and a variety of objects and clothing, so include what medium you would like the print to be on. I will get back to you with the size I can print the image at, a preview of the print, the cost of printing and shipping, and the best estimate on how long it will take to be delivered. All payments are done through e-transfer and printing is done by a third party. <br> <br>If you have any questions feel free to email me at the same email.</h3>
         <h3 style="margin-top: -2.5vw;">
             Email: <a href="mailto:river.h.carley@gmail.com">river.h.carley@gmail.com</a>
-          </h3>
+        </h3>
+        <h3 style="margin-top: -2.5vw;">
+            Examples below. More things can be made not displayed and im more styles, but they dont all ship everywhere.</a>
+        </h3>
+    </div>
+    <!-- Grid of images -->
+    <div class="image-grid">
+        <!-- Add your images here -->
+        <img src="images/examples/matte-canvas-stretched-075 (1).jpg" alt="Image 1">
+        <img src="images/examples/rolled-posters.jpg" alt="Image 2">
+        <img src="images/examples/square-magnet.jpg" alt="Image 3">
+        <img src="images/examples/accent-mugs-11oz.jpg" alt="Image 4">
+        <img src="images/examples/desk-mats.jpg" alt="Image 5">
+        <img src="images/examples/greeting-cards-1-or-10-pcs.jpg" alt="Image 6">
+        <img src="images/examples/holographic-die-cut-stickers.jpg" alt="Image 7">
+        <img src="images/examples/tough-phone-cases.jpg" alt="Image 8">
+        <img src="images/examples/trucker-caps.jpg" alt="Image 9">
+        <img src="images/examples/unisex-heavy-blend-hooded-sweatshirt.jpg" alt="Image 10">
+        <img src="images/examples/unisex-heavy-cotton-tee.jpg" alt="Image 11">
+        <img src="images/examples/tote-bag-aop.jpg" alt="Image 12">
     </div>
     <style>
         /* Style for the header background */
@@ -41,6 +60,22 @@
         /* Style for the h1 */
         h1 {
             margin: 0; /* Remove default margin */
+        }
+
+        /* Style for the image grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+            gap: 10px; /* Space between images */
+            padding: 10px;
+            margin-top: 20px; /* Space from previous content */
+        }
+
+        .image-grid img {
+            width: 100%; /* Make images fill the grid cells */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Optional: Add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
         }
     </style>
 </body>
