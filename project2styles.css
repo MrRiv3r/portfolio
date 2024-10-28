@@ -629,7 +629,7 @@ h1 {
             min-height: 100vh;
             width: 80%;
             /*/top controlls hiehgt of images////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-            top: 25vw;
+            top: 27vw;
             overflow-y: auto;
             justify-content: center; /* Center child elements horizontally */
         
