@@ -6,6 +6,20 @@ body{
        /* background-color:  rgb(253, 253, 253);  */
     background-color: rgb(36, 36, 36);
 }
+.header-background {
+    background-color: rgb(36,36, 36); /* Set the background color to white */
+    min-width: 100%;
+    padding-top: 1vw; /* Add padding for spacing */
+    
+}
+select {
+    position: relative; /* Change position to relative */
+    font-size: 2vw; /* Set the desired font size */
+    background-color: black;
+    color: bisque;
+    text-align: center;
+    text-transform: uppercase; /* Convert text to uppercase */
+}
 .container {
     min-height:50vh;
     max-height: 200px!important;
