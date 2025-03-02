@@ -279,7 +279,7 @@
 if (slideshowContainer.classList.contains("grid-active")) {
         slideshowContainer.style.top = "7vw"; // Center vertically
         slideshowContainer.style.left = "50%"; // Center horizontally
-        slideshowContainer.style.transform = "translate(-50%, -0vw)"; // Center using transform
+        slideshowContainer.style.transform = "translate(-50%, 0vw)"; // Center using transform
         slideshowContainer.style.maxHeight = "930vw"; // Adjust as needed
         
 }
@@ -469,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (slideshowContainer.classList.contains("grid-active")) {
         slideshowContainer.style.top = "7vw"; // Center vertically
         slideshowContainer.style.left = "50%"; // Center horizontally
-        slideshowContainer.style.transform = "translate(-50%, -0vw)"; // Center using transform
+        slideshowContainer.style.transform = "translate(-50%, 0vw)"; // Center using transform
         slideshowContainer.style.maxHeight = "930vw"; // Adjust as needed
 
         // Hide previous and next buttons in grid view
@@ -519,8 +519,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Apply grid view styles
             slideshowContainer.style.top = "7vw"; // Center vertically
             slideshowContainer.style.left = "50%"; // Center horizontally
-            slideshowContainer.style.transform = "translate(-50%, -0vw)"; // Center using transform
-            slideshowContainer.style.maxHeight = "910w"; // Adjust as needed
+            slideshowContainer.style.transform = "translate(-50%, 0vw)"; // Center using transform
+            slideshowContainer.style.maxHeight = "930vw"; // Adjust as needed
 
             // Hide previous and next buttons in grid view
             if (prevButton && nextButton) {
@@ -568,8 +568,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyGridView() {
         slideshowContainer.style.top = "7vw";
         slideshowContainer.style.left = "50%";
-        slideshowContainer.style.transform = "translate(-50%, -0vw)";
-        slideshowContainer.style.maxHeight = "910vw";
+        slideshowContainer.style.transform = "translate(-50%, 0vw)";
+        slideshowContainer.style.maxHeight = "930vw";
+        
 
         if (prevButton && nextButton) {
             prevButton.style.display = "none";
@@ -689,11 +690,6 @@ document.addEventListener('DOMContentLoaded', () => {
     display: none;
 }
 
-
-
-
-
-
 #text-box {
     display: none; /* Hidden by default */
     position: absolute; /* Positioned relative to the modal */
@@ -709,41 +705,18 @@ document.addEventListener('DOMContentLoaded', () => {
     border-radius: 5px; /* Rounded corners */
     z-index: 20; /* Ensure it's above the image */
 }
-        .slideshow-image:hover,
+
+        /* Hover effect for images */
+.slideshow-image:hover,
 .slideshow-image.hover-effect {
     opacity: 0.8;
     transform: scale(1.05);
     transition: all 0.3s ease;
 }
-        .hide-cursor {
-    cursor: none;
-}
-        #tooltip {
-    display: none; /* Hidden by default */
-    position: absolute; /* Positioned relative to the button */
-    background-color: #333; /* Background color of the tooltip */
-    color: white; /* Text color of the tooltip */
-    padding: 5px; /* Padding around the text */
-    border-radius: 3px; /* Rounded corners */
-    font-size: 1vw; /* Font size */
-    white-space: nowrap; /* Prevent line breaks */
-    z-index: 10; /* Ensure it's on top of other content */
-    cursor: none;
-}
-          #toggleButton {
-            width: 100vw;
-            height: 3vw;
-            background-color: #000000; /* Default background color */
-            color: white; /* Default text color */
-            border: none; /* Remove border */
-            font-size: 1.5vw; /* Font size */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: background-color 0.3s ease; /* Smooth transition for background color */
-        }
 
-        #toggleButton:hover {
-            background-color: #868686; /* Change background color on hover */
-        }
+         .hide-cursor {
+    cursor: none;
+}
         /* Style for slideshow container */
         .container {
             display: flex;
@@ -754,11 +727,13 @@ document.addEventListener('DOMContentLoaded', () => {
         .slideshow-container {
     display: flex;
     flex-wrap: wrap; /* Allow images to wrap to the next row */
-    justify-content: center; /* Center align images horizontally */
+    justify-content: flex-start; /* Center align images horizontally */
     align-items: flex-start; /* Align images at the top */
     width: 100%; /* Adjusted to take full width of parent container */
     max-width: 100%; /* Ensure it doesn't exceed the viewport width */
     margin: 0 auto; /* Center the container horizontally */
+    flex-direction: column; /* Ensure images are laid out horizontally */
+    
 }
 
 /* Style for images */
@@ -770,6 +745,7 @@ document.addEventListener('DOMContentLoaded', () => {
     height: auto;
     max-height: 40vw; /* Adjust as per your design */
     margin: 0 auto; /* Center the image horizontally */
+    padding: 0;             /* Ensure there's no padding */
 }
 
 /* Additional specificity for small-image class */
@@ -859,15 +835,35 @@ document.addEventListener('DOMContentLoaded', () => {
             text-decoration: none;
             cursor: pointer;
         }
-
+        #tooltip {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the button */
+    background-color: #333; /* Background color of the tooltip */
+    color: white; /* Text color of the tooltip */
+    padding: 5px; /* Padding around the text */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 1vw; /* Font size */
+    white-space: nowrap; /* Prevent line breaks */
+    z-index: 10; /* Ensure it's on top of other content */
+}
+#toggleButton {
+            width: 100vw;
+            height: 3vw;
+            background-color: #000000; /* Default background color */
+            color: white; /* Default text color */
+            border: none; /* Remove border */
+            font-size: 1.5vw; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
         /* Media query for mobile */
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: 930px) {
             .slideshow-image {
                 max-width: 70vw; /* Set the maximum width to 60% of the viewport width */
                 min-width: 70vw; /* Set the minimum width to 60% of the viewport width */
-                max-height: 100vh; /* Allow the height to adjust automatically */
+                max-height: 200vw; /* Allow the height to adjust automatically */
             }
-            #tooltip {
+                #tooltip {
     display: none; /* Hidden by default */
     position: absolute; /* Positioned relative to the button */
     background-color: #333; /* Background color of the tooltip */
@@ -878,13 +874,16 @@ document.addEventListener('DOMContentLoaded', () => {
     white-space: nowrap; /* Prevent line breaks */
     z-index: 10; /* Ensure it's on top of other content */
 }
+
+            
         }
         @media screen and (max-height:400px) {
             .slideshow-image {
-                object-fit: contain; /* Maintain aspect ratio */
-                max-height: 100vh; /* Allow the height to adjust automatically */
+                max-width: 50vw; /* Set the maximum width to 60% of the viewport width */
+                min-width: 50vw; /* Set the minimum width to 60% of the viewport width */
+                max-height: 200vw; /* Allow the height to adjust automatically */
             }
-            #tooltip {
+                #tooltip {
     display: none; /* Hidden by default */
     position: absolute; /* Positioned relative to the button */
     background-color: #333; /* Background color of the tooltip */
@@ -895,9 +894,15 @@ document.addEventListener('DOMContentLoaded', () => {
     white-space: nowrap; /* Prevent line breaks */
     z-index: 10; /* Ensure it's on top of other content */
 }
+            
         }
-    </style>
-     <style>
+
+        
+        
+
+        #toggleButton:hover {
+            background-color: #868686; /* Change background color on hover */
+        }
         /* Style for the header background */
         .header-background {
             display: flex;
