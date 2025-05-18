@@ -11,149 +11,112 @@
 <!-- For Apple devices -->
 <link rel="apple-touch-icon" sizes="180x180" href="/images/ghost-icon.png">
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>River Carley Portfolio</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    .wrapper {
+        background-color: black;
+        overflow: hidden;
+        position: relative;
+        height: 65vh;
+        width: 100%;
+    }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>River Carley Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Style for the wrapper div */
-        .wrapper {
-            background-color: black; /* Black background */
-            overflow: hidden; /* Hide overflowing content */
-            position: relative; /* For positioning children absolutely */
-            height: 65vh; /* Fixed height, adjust as needed */
-            width: 100%; /* Full width */
-        }
+    .scroll-track {
+        display: flex;
+        position: absolute;
+        height: 100%;
+        white-space: nowrap;
+        animation: scroll 60s linear infinite;
+    }
 
-        /* Style for the banner container */
-        .banner-container {
-            display: flex; /* Align images horizontally */
-            position: absolute; /* Allows for absolute positioning */
-            height: 100%; /* Match wrapper height */
-            width: 200%; /* Set width to accommodate scrolling */
-            white-space: nowrap; /* Prevent wrapping of images */
-        }
+    .scroll-track img {
+        height: 100%;
+        width: auto;
+        display: inline-block;
+    }
 
-        /* Style for individual images */
-        .banner-container img {
-            height: 100%; /* Full height of the wrapper */
-            width: auto; /* Maintain aspect ratio */
-            display: inline-block; /* Inline-block for horizontal alignment */
-        }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
 
-        /* Keyframes for scrolling animation */
-        @keyframes scroll {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(-100%);
-            }
-        }
-        @media screen and (max-width: 1000px) {
-           p{
-            font-size: 5vw;
-           }
-        }
-        @media screen and (max-height:400px) {
-            p{
-            font-size: 5vw;
-           }
-}
-        
-    </style>
+    .slide-text {
+        max-width: 50vw;
+        text-align: justify center;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+</style>
 </head>
 <body>
-    <div class="header-background">
-        <select onchange="window.location.href=this.value">
-            <option value="" disabled selected>Menu</option>
+<div class="header-background">
+    <select onchange="window.location.href=this.value">
+        <option value="" disabled selected>Menu</option>
+        <option value="https://shop.rivercarley.com/">Shop</option>
+        <option value="projects2.html">Projects</option>
+        <option value="illustrations.html">Art🔒</option>
+        <option value="animations.html">Videos🔒</option>
+        <option value="logos.html">Logos🔒</option>
+        <option value="models.html">Models🔒</option>
+        <option value="orders.html">Orders</option>
+    </select>
+    <h1>River Carley's Portfolio</h1>
+</div>
 
-            <option value="https://shop.rivercarley.com/">Shop</option>
-            <option value="projects2.html">Projects</option>
-            <option value="illustrations.html">Art🔒</option>
-            <option value="animations.html">Videos🔒</option>
+<div class="wrapper">
+    <div class="scroll-track" id="scroll-track"></div>
+</div>
 
-            <option value="logos.html">Logos🔒</option>
-            <option value="models.html">Models🔒</option>
-            <option value="orders.html">Orders</option>
-          
-        </select>
-        <h1>River Carley's Portfolio</h1>
-    </div>
-
-    <!-- Wrapper div with black background -->
-    <div class="wrapper">
-        <!-- Banner container -->
-        <div class="banner-container">
-            <!-- Images to create a seamless effect -->
-            <img src="images/logos/1 (26).png" alt="Slide 1">
-            <img src="images/art/river-carley-rhc24-0.jpg" alt="Slide 2">
-            <img src="images/models/model1 (32).jpg" alt="Slide 3">
-            <img src="images/models/model1 (13).jpg" alt="Slide 4">
-            <img src="images/models/model1 (30).jpg" alt="Slide 5">
-            <img src="images/art/2 (60).jpg" alt="Slide 6">
-            <img src="images/art/2 (84).jpg" alt="Slide 7">
-            <img src="images/art/river-carley-self-portrait.jpg" alt="Slide 8">
-            <img src="images/art/2 (33).jpg" alt="Slide 9">
-            <img src="images/logos/1 (14).png" alt="Slide 10">
-            <img src="images/art/hare.jpg" alt="Slide 11">
-            <img src="images/art/zues.jpg" alt="Slide 12">
-            <img src="images/art/realistic face 2.jpg" alt="Slide 13">
-        </div>
-    </div>
-
-    <!-- Slide text -->
-    <h3 class="slide-text">Hi, I'm River Carley. </h3>
-    <h3 class="slide-text">
-  This website was created to showcase and archive my past work, offer freelance services, facilitate custom print orders, and provide a direct link to my storefront.
+<h3 class="slide-text">Hi, I'm River Carley.</h3>
+<h3 class="slide-text">
+    This website was created to showcase and archive my past work, offer freelance services, facilitate custom print orders, and provide a direct link to my storefront.
 </h3>
 
-<style>
-  .slide-text {
-    max-width: 50vw; /* adjust as needed */
-    text-align: justify center;
-    margin: 0 auto; /* center the text block */
-    line-height: 1.6; /* optional: improves readability */
-  }
-</style>
+<script>
+    const imagePaths = [
+        "images/logos/1 (26).png",
+        "images/art/river-carley-rhc24-0.jpg",
+        "images/models/model1 (32).jpg",
+        "images/models/model1 (13).jpg",
+        "images/models/model1 (30).jpg",
+        "images/art/2 (60).jpg",
+        "images/art/2 (84).jpg",
+        "images/art/river-carley-self-portrait.jpg",
+        "images/art/2 (33).jpg",
+        "images/logos/1 (14).png",
+        "images/art/hare.jpg",
+        "images/art/zues.jpg",
+        "images/art/realistic face 2.jpg",
+        "images/models/oldman.jpg",
+        "images/models/mask silver.jpg"
+    ];
 
-    <script>
-        function calculateTotalWidth() {
-            const images = document.querySelectorAll('.banner-container img');
-            let totalWidth = 0;
-
-            images.forEach(img => {
-                totalWidth += img.offsetWidth;
-            });
-
-            return totalWidth;
+    function shuffle(array) {
+        let currentIndex = array.length, randomIndex;
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
         }
+        return array;
+    }
 
-        function duplicateImages() {
-            const container = document.querySelector('.banner-container');
-            const images = Array.from(container.querySelectorAll('img'));
-            const totalWidth = calculateTotalWidth();
-            const wrapperWidth = document.querySelector('.wrapper').offsetWidth;
+    function populateBanner() {
+        const container = document.getElementById('scroll-track');
+        const shuffled = shuffle([...imagePaths]);
 
-            // Duplicate the images and append them to the container
-            images.forEach(img => {
-                const clone = img.cloneNode(true);
-                container.appendChild(clone);
-            });
+        // Append 2 sets for seamless looping
+        [...shuffled, ...shuffled].forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            container.appendChild(img);
+        });
+    }
 
-            // Set the container width to accommodate all images
-            container.style.width = `${totalWidth * 1}px`;
-
-            // Set the animation duration
-            const scrollDuration = 10; // Desired duration in seconds
-            const animationDuration = (totalWidth / wrapperWidth) * scrollDuration;
-            container.style.animation = `scroll ${animationDuration}s linear infinite`;
-        }
-
-        window.onload = function() {
-            duplicateImages();
-        };
-    </script>
+    window.onload = populateBanner;
+</script>
 </body>
 </html>
