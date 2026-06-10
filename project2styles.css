@@ -208,6 +208,7 @@ h1 {
 }
 
 
+
 .container.active .speaker {
     width:4.5vw;
 }
@@ -585,7 +586,70 @@ h1 {
             background:rgb(36, 36, 36);
             
         }
+         .speaker:nth-child(11) {
+            width:100%;
+            min-height:8vW;
+            height:8vW;
+            max-height:100vh;
+         cursor:pointer;   
+            transition:height 500ms;
+            position: relative;
+            background:rgb(36, 36, 36);
+            
+        }
         
+
+         .speaker:nth-child(12) {
+            width:100%;
+            min-height:8vW;
+            height:8vW;
+            max-height:100vh;
+         cursor:pointer;   
+            transition:height 500ms;
+            position: relative;
+            background:rgb(36, 36, 36);
+            
+        }
+        
+ .speaker:nth-child(13) {
+            width:100%;
+            min-height:8vW;
+            height:8vW;
+            max-height:100vh;
+         cursor:pointer;   
+            transition:height 500ms;
+            position: relative;
+            background:rgb(36, 36, 36);
+            
+        }
+        
+
+         .speaker:nth-child(14) {
+            width:100%;
+            min-height:8vW;
+            height:8vW;
+            max-height:100vh;
+         cursor:pointer;   
+            transition:height 500ms;
+            position: relative;
+            background:rgb(36, 36, 36);
+            
+        }
+        
+
+         .speaker:nth-child(15) {
+            width:100%;
+            min-height:8vW;
+            height:8vW;
+            max-height:100vh;
+         cursor:pointer;   
+            transition:height 500ms;
+            position: relative;
+            background:rgb(36, 36, 36);
+            
+        }
+        
+
 
         
         .container.active .speaker {
@@ -636,6 +700,26 @@ h1 {
             width:100%!important;
             height:100vh!important;
         }
+        .speaker.active:nth-child(11) {
+            width:100%!important;
+            height:100vh!important;
+        }
+        .speaker.active:nth-child(12) {
+            width:100%!important;
+            height:100vh!important;
+        }
+        .speaker.active:nth-child(13) {
+            width:100%!important;
+            height:100vh!important;
+        }
+        .speaker.active:nth-child(14) {
+            width:100%!important;
+            height:100vh!important;
+        }
+        .speaker.active:nth-child(15) {
+            width:100%!important;
+            height:100vh!important;
+        }
         .container.active .speaker:nth-child(1) {
             width:100%
            }
@@ -682,6 +766,21 @@ h1 {
             top: 2vw;
         }
         .speaker:nth-child(10) h3 {
+            top: 2vw;
+        }
+        .speaker:nth-child(11) h3 {
+            top: 2vw;
+        }
+        .speaker:nth-child(12) h3 {
+            top: 2vw;
+        }
+        .speaker:nth-child(13) h3 {
+            top: 2vw;
+        }
+        .speaker:nth-child(14) h3 {
+            top: 2vw;
+        }
+        .speaker:nth-child(15) h3 {
             top: 2vw;
         }
         h1, h2 {
