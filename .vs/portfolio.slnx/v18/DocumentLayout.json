@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "projects2.html",
               "ToolTip": "D:\\old content\\portfoli_test\\portfolio\\projects2.html",
               "RelativeToolTip": "projects2.html",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAFoAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAD4AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-09-14T15:26:07.954Z",
               "EditorCaption": ""
@@ -71,8 +71,7 @@
               "RelativeToolTip": "projects.html",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2026-09-14T15:25:55.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-14T15:25:55.377Z"
             },
             {
               "$type": "Document",
@@ -82,7 +81,7 @@
               "RelativeDocumentMoniker": "orders.html",
               "ToolTip": "D:\\old content\\portfoli_test\\portfolio\\orders.html",
               "RelativeToolTip": "orders.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-09-14T15:25:46.425Z",
               "EditorCaption": ""
@@ -95,7 +94,7 @@
               "RelativeDocumentMoniker": "models.html",
               "ToolTip": "D:\\old content\\portfoli_test\\portfolio\\models.html",
               "RelativeToolTip": "models.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAABaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-09-14T15:25:37.11Z",
               "EditorCaption": ""
@@ -108,7 +107,7 @@
               "RelativeDocumentMoniker": "logos.html",
               "ToolTip": "D:\\old content\\portfoli_test\\portfolio\\logos.html",
               "RelativeToolTip": "logos.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAABaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-09-14T15:25:21.598Z",
               "EditorCaption": ""
@@ -121,7 +120,7 @@
               "RelativeDocumentMoniker": "illustrations.html",
               "ToolTip": "D:\\old content\\portfoli_test\\portfolio\\illustrations.html",
               "RelativeToolTip": "illustrations.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAABaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-09-14T15:24:58.45Z",
               "EditorCaption": ""
@@ -134,7 +133,7 @@
               "RelativeDocumentMoniker": "animations.html",
               "ToolTip": "D:\\old content\\portfoli_test\\portfolio\\animations.html",
               "RelativeToolTip": "animations.html",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAH8AAABoAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAJUAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-09-14T15:24:49.507Z",
               "EditorCaption": ""
@@ -153,6 +152,10 @@
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "index.html",
@@ -160,7 +163,7 @@
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "D:\\old content\\portfoli_test\\portfolio\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2026-07-31T19:53:10.919Z",
               "EditorCaption": ""
